@@ -1,0 +1,483 @@
+<!Doctype html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript Calculator</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+        <meta name="description" content="JavaScript Calculator with a fantastic UI, made by Tsotne Gvadzabia and designed by Jordan Symington"/>
+        <meta name="keywords" content="Tsotne, Gvadzabia, Tsotne Gvadzabia , Calculator , JavaScript Calculator, Amazing UI , UI concepts , Calculator UI , Jordan , Jordan Symington"/>
+        <meta name="author" content="Tsotne Gvadzabia"/>
+        
+        
+        <link rel="shortcut icon" href="/projects/calc/img/Calculator.png"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>
+        <script defer src="https://use.fontawesome.com/releases/v5.0.10/js/all.js" integrity="sha384-slN8GvtUJGnv6ca26v8EzVaR9DC58QEwsIk9q1QXdCU8Yu8ck/tL/5szYlBbqmS+" crossorigin="anonymous"></script>
+        <style>
+        
+        * {
+            box-sizing: border-box;
+            font-family: 'Roboto', sans-serif;
+            }
+           html{
+                height: 100%;
+                margin: 0;
+            }
+            body{
+                height: 100%;
+                margin: 0;
+                background-attachment: fixed;
+                background: blue; /* For browsers that do not support gradients */
+                background: linear-gradient(to bottom right, #82C5F0 10%,#5D8AD5 40%,#5D8AD5 40% ,#C927EE 90%);
+                background-repeat: no-repeat;
+                font-family: 'Roboto', sans-serif;
+                overflow: hidden;
+            }
+            .title{
+                width: 100%;
+                text-align: center;
+                
+            }
+            .container {
+                width: 400px;
+                height: 545px;
+                margin-top: 100px;
+                margin-left: 39.5%;
+            }
+            form {  
+                width: 330px;
+                margin:auto;
+                min-height: 400px;
+                background:  linear-gradient(to bottom right, #82C5F0 10%,#5D8AD5 40%,#5D8AD5 40% ,#C927EE 90%);
+                -webkit-box-shadow: 3px 3px 60px rgba(0,0,0,0.5);  /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+                -moz-box-shadow:    3px 3px 60px rgba(0,0,0,0.5);  /* Firefox 3.5 - 3.6 */
+                box-shadow:         3px 3px 60px rgba(0,0,0,0.5);  /* Opera 10.5, IE 9, Firefox 4+, Chrome 6+, iOS 5 */
+                -webkit-border-radius: 5px;
+                -moz-border-radius: 5px;
+                border-radius: 5px;
+            }
+            .calc-screen {
+                background:none;
+                width: 100%;
+                height: 150px;
+                padding: 20px;
+                border-bottom: 1px solid #fff;
+            }
+            .calc-operation {
+                text-align: right;
+                color: #fff;
+                font-size: 21px;
+                padding-bottom: 10px;
+                border:none;
+            }
+            .operation{
+                background: transparent;
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size: 20px;
+                text-align: right;
+                color:  #fff;
+            }
+            .calc-typed {
+                margin-top: 20px;
+                
+            }
+            .calc-typed,input::placeholder{
+                color: white;
+            }
+            .display{
+                background: transparent;
+                border: none;
+                width: 100%;
+                height: 100%;
+                font-size: 45px;
+                text-align: right;
+                font-weight: 600;
+            }
+            .display,input::placeholder{
+                color: white;
+            }
+            .calc-button-row {
+                width: 100%;
+                background: none;
+                height: 100%; 
+            }
+            button {
+                width: 25%;
+                height: 100%;
+                background:none;
+                color: #fff;
+                padding: 30px;
+                display: inline-block;
+                font-size: 15px;
+                text-align: center;
+                vertical-align: middle;
+                margin-right: -4px;
+                border: none;
+                border-right:solid 1px #fff;
+                border-bottom: solid 1px #fff;
+                cursor: pointer;
+            }
+            button.b{
+                border-bottom: none;
+            }
+            button.top{
+                background: rgba(214, 234, 248,0.5);
+                
+            }
+            button.g{
+                color: #fff;
+                background: rgba(0,0,0,0.3); 
+                border-right: none;
+            }
+            button.corner{
+                background-color: #60C4DC;
+                border-right: none;
+                -webkit-border-radius: 0px 0px 5px 0px; /* Safari 3-4, iOS 4.0.2 - 4.2, Android 2.3+ */
+                -moz-border-radius: 0px 0px 5px 0px; /* Firefox 3.5 - 3.6 */
+                border-radius: 0px 0px 5px 0px; /* top left, top right, bottom right, bottom left */
+                
+            }
+            footer{
+                position: fixed;
+                left: 0;
+                bottom: 0;
+                width: 100%;
+                background: white;
+                color: black;
+                text-align: center;
+            } 
+            a:link{
+                text-decoration: none;
+                color: black;
+            }
+            a:visited{
+                text-decoration: none;
+                color: black;
+            }
+            a:hover{
+                color: blue;    
+            }
+            a:active{
+                text-decoration: none;
+            }
+            
+            .icons{
+                margin-left: 5px;
+            }
+            
+            /*      Media Queries       */
+            
+            @media (min-width: 319px) and (max-width: 350px) {
+                .title{
+                    font-size: 10px;
+                }
+                .container{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                    width: inherit;
+                }
+                form{
+                    margin: 0px; 
+                    width: inherit;
+                }  
+                @media (min-height:560px) and (max-height:668px){
+                    /* IPHONE 5 and Galaxy 5 */
+                }
+            }
+            @media (min-width: 351px) and (max-width: 374px) {
+                .title{
+                    font-size: 10px;
+                }
+                .container{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                    width: inherit;
+                }
+                form{
+                    margin-left: 10px;
+                    margin-right: 10px;
+                    width: inherit;
+                }   
+            }
+            @media (min-width: 375px) and (max-width: 425px) {
+                .title{
+                    font-size: 10px;
+                }
+                .container{
+                    margin-left: 0px;
+                    margin-top: 0px;
+                    width: inherit;
+                }
+                form{
+                    margin-left: 30px;
+                    margin-right: 30px;
+                    width: inherit;
+                }
+                footer{
+                    height: 80px;
+                }
+            }
+            @media (min-width:426px) and (max-width:519px){
+                .title{
+                    font-size: 20px;
+                }
+                .container{
+                    margin-left: 8%;
+                    margin-top: 0px;
+                }
+                form{
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+                footer{
+                    height: 80px;
+                }
+            }
+            @media (min-width:520px) and (max-width:550px){
+                .title{
+                    font-size: 20px;
+                }
+                .container{
+                    margin-left: 15%;
+                    margin-top: 0px;
+                }
+                form{
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+                footer{
+                    height: 80px;
+                }
+            }
+            @media(min-width:551px) and (max-width:768px){
+                .title{
+                    font-size: 20px;
+                }
+                .container{
+                    margin-left: 25%;
+                }
+                form{
+                    margin-left: 30px;
+                    margin-right: 30px;
+                }
+            }
+            @media(min-width:769px) and (max-width:1110px){
+                .container{
+                    margin-left: 30%;
+                }
+            }
+            @media(min-width:1111px) and (max-width:1550px){
+                .container{
+                    margin-left: 35%;
+                }
+            }
+            
+            /*     Media Queries End    */
+        </style>
+    </head>
+    
+    <body>
+        <h1 class="title">JavaScript Calculator</h1>
+        <div class="container">
+          <form>
+            <div class="calc-screen">
+              <div class="calc-operation">
+                <input type="text" readonly class="operation" id="operation">
+              </div>
+                <div class="calc-typed">
+                    <input type="text" readonly class="display" name="display"  id="display" value="">
+                </div>
+            </div>
+            <div class="calc-button-row">
+              <button class="button top" onclick='clearscreen("")' type="button">AC</button>
+              <button class="button top" onclick='negation()' type="button">+/-</button>
+              <button class="button top" onclick='percentage()'type="button" >%</button>
+              <button class="button g" onclick='movement("÷")' type="button">&divide;</button>  
+            </div>
+            <div class="calc-button-row">
+              <button class="button c"  onclick='screen("7")' type="button">7</button>
+              <button class="button" onclick='screen("8")'type="button">8</button>
+              <button class="button" value="9" onclick='screen("9")' type="button">9</button>
+              <button class="button g" onclick='movement("×")' type="button">&times;</button>
+            </div>
+            <div class="calc-button-row">
+              <button class="button c" onclick='screen("4")' type="button">4</button>
+              <button class="button" onclick='screen("5")' type="button">5</button>
+              <button class="button" onclick='screen("6")' type="button">6</button>
+                <button class="button g" onclick='movement("-")' type="button">−</button>
+            </div>
+            <div class="calc-button-row">
+              <button class="button c"  onclick='screen("1")' type="button">1</button>
+              <button class="button"  onclick='screen("2")' type="button">2</button>
+              <button class="button" value="3" onclick='screen("3")' type="button">3</button>
+              <button class="button g" value="+" onclick='movement("+")' type="button">+</button>
+            </div>
+            <div class="calc-button-row">
+              <button class="button c b"  onclick='screen(".")' type="button">.</button>
+              <button class="button b"  onclick='screen("0")' type="button">0</button>
+              <button class="button b" onclick='backspace()' type="button">del</button>
+              <button class="button b corner"  onclick='movement("=")' type="button">=</button>
+              </div>
+            </form>
+          </div>    
+          <footer>
+            <h4>By <a href="/">Tsotne Gvadzabia</a><a href="https://github.com/RockiRider/Js-Calculator"><i class="fab fa-github icons"></i></a></h4>
+              <h5>Design<a href="https://www.instagram.com/p/BflRpo0lm1o/?taken-by=ui.inspirations"> Inspired</a> By <a href="https://www.instagram.com/p/BbuHtJPBJCp/?taken-by=jordan.symington">Jordan Symington</a></h5>
+          </footer>
+        
+        <script>
+            var box=document.getElementById("display");
+            var operator = " ";
+            var firstint = " ";
+            var secondint = " ";
+            var myarray = [firstint, operator, secondint];
+            var proparray = myarray.join(" ");
+            document.getElementById("operation").value = proparray;
+            var opdisplay=document.getElementById("operation");
+            
+            function callarray(){
+                myarray = [firstint, operator, secondint];
+                proparray = myarray.join(" ");
+                document.getElementById("operation").value = proparray;
+                
+                
+            }
+
+            function clearscreen(){
+              document.getElementById("display").value ="";
+              document.getElementById("operation").value="";
+            }
+            function screen(val){
+              box.value += val;  
+            }
+            function movement(op){
+                var replacement = box.value;
+                if(op==="×"){
+                    if(box.value===""){
+                        firstint = "0";
+                        operator = op;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }else{
+                        operator = op;
+                        firstint = box.value;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }
+                    
+                    
+                               
+                }
+                else if(op==="+"){
+                    if(box.value===""){
+                        firstint = "0";
+                        operator = op;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }else{
+                        operator = op;
+                        firstint = box.value;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }
+                }
+                else if(op==="-"){
+                    if(box.value===""){
+                        firstint = "0";
+                        operator = op;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }else{
+                        operator = op;
+                        firstint = box.value;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }    
+                }
+                else if(op==="÷"){
+                    if(box.value===""){
+                        firstint = "0";
+                        operator = op;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }else{
+                        operator = op;
+                        firstint = box.value;
+                        secondint = "";
+                        box.value ="";
+                        callarray();
+                    }
+                }
+                else if(op==="="){
+                    if(box.value===""){
+                        box.value="0";
+                    }
+                    else{
+                        secondint=box.value;
+                        callarray();
+                        var correction1 = opdisplay.value;
+                        var correction1 = correction1.replace("×","*");
+                        correction1 = correction1.replace("÷","/");
+                        x = correction1;
+                        x = eval(x);
+                        box.value = x;
+                    }
+                }
+                else{
+                    box.value= "Error";
+                }
+            
+            }
+
+            function backspace(){
+                var value = document.getElementById("display").value;
+                document.getElementById("display").value = value.substr(0, value.length - 1);
+            }
+            function percentage(){
+                var number = box.value;
+                number= number / 100;
+                box.value=number;
+            }
+            function negation(){
+
+              if(box.value===""){   //Number Absent
+                box.value="0";
+              }else{  
+
+                var checker = Math.sign(box.value);
+                
+
+                if(checker=="1"){
+                  checker="-1";
+                  box.value=-Math.abs(box.value);
+                }
+                else if(box.value==="-0"){
+
+                  box.value="0";
+                  
+                }
+                else if(checker=="0"){
+                  box.value="-0"
+                  
+                }
+                else if(checker=="-1"){
+                  checker="1";
+                  box.value=Math.abs(box.value);
+                }
+                else{
+                  box.value="Error!";
+                }
+              } 
+            }
+        </script>
+    </body>
+
+</html>

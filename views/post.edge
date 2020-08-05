@@ -1,0 +1,39 @@
+@layout('layouts.posts')
+ 
+@section('content')
+    <!-- Page Header -->
+    <header class="masthead" style="background-image: url('{{ post.image }}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="post-heading">
+              <h1>{{ post.title }}</h1>
+              <span class="meta">
+                <a href="/blog/?search={{ post.subject }}">{{ post.subject }}</a>
+                - {{ post.createdAt.toDateString() }}
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+ 
+    <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div id="showContent" class="col-lg-8 col-md-10 mx-auto">
+            {{ parseThis(post.content)}}
+          </div>
+        </div>
+      </div>
+    </article>
+    <script>
+       window.onload = function() {
+        let content = $('#showContent').text();
+        document.getElementById("showContent").innerHTML = content;
+        $('#showContent').css('visibility','visible');
+       };
+    </script>
+@endsection

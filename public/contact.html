@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Contact Me - Tsotne Gvadzabia</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/contactstyle.css">
+    <link rel="stylesheet" href="/css/responsive/contact-responsive.css">
+    <link rel="shortcut icon" href="img/icons/myicon.jpg">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $(".preloader").delay(1000).fadeOut();
+            $(".totality").delay(1500).fadeIn();
+        });
+    </script>
+
+    <!--[if lt IE 9]>
+        <script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111009783-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111009783-4');
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="preloader" id="preloader">
+        <div class="image">
+            <div class="circle"></div>
+        </div>
+    </div>
+
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+            <i class="fa fa-times-circle-o"></i>
+        </div>
+
+        <ul class="menu-halfscreen">
+            <li><a href="/">My Projects</a></li>
+            <li><a href="/blog">My Blog</a></li>
+            <li><a href="/contact">Contact Me</a></li>
+        </ul>
+    </div>
+    <div class="totality">
+        <!---------DIV Over Everything----->
+
+        <header class="trox" id="hell">
+            <div class="headmargline">
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+            </div>
+        </header>
+        <section class="postcard" id="contact">
+            <h1>Contact Me</h1>
+            <form>
+                <div class="area" id="anim">
+                    <div class="field name-box">
+                        <input type="text" name="name" id="name" placeholder="Who Are You?" required />
+                        <label for="name">Name</label>
+                        <span class="ss-icon">check</span>
+                    </div>
+
+                    <div class="field email-box">
+                        <input type="email" name="email" id="email" placeholder="name@email.com" required />
+                        <label for="email">Email</label>
+                        <span class="ss-icon">check</span>
+                    </div>
+
+                    <div class="field msg-box">
+                        <textarea id="message" name="message" rows="5" placeholder="Your message goes here..."
+                            required></textarea>
+                        <label for="msg">Msg</label>
+                        <span class="ss-icon">check</span>
+                    </div>
+                    <div class="field msg-box honey">
+                        <textarea id="subject" name="subject" rows="5" placeholder="Subject"></textarea>
+                        <label for="sub">Msg</label>
+                        <span class="ss-icon">check</span>
+                    </div>
+                    <input class="button" type="submit" value="Send" name="submit" />
+                </div>
+            </form>
+        </section>
+    </div>
+    <div class="frame">
+        <div class="center">
+            <div class="notification">
+                <div class="notification__content">
+                    <i class="notification__icon fas fa-exclamation-circle"></i>
+                    <h3 class="notification__title"></h3>
+                    <p class="notification__text"></p>
+                </div>
+                <button id="acceptance" class="notification__button">
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!---- Footer ---->
+    <footer class="totality">
+        <div class="footermargin">
+            <div class="footercontent">
+                <a href="https://stackoverflow.com/users/8645413/tsot-gvad">stack overflow</a>
+                <a href="https://github.com/RockiRider">github</a>
+                <a href="https://www.linkedin.com/in/tsotne-gvadzabia/">linkedin</a>
+            </div>
+        </div>
+    </footer>
+    <!--FIX FOOTER -->
+    <script>
+        let _notification = $('.notification');
+        // Notification icon
+        let _nIcon = $('.notification__icon');
+        // Notification title
+        let _nTitle = $('.notification__title');
+
+        // Notification text
+        let _nText = $('.notification__text');
+
+        // Notification button
+        let _button = $('.notification__button');
+
+
+
+        $('form').on('submit', (e) => {
+
+            e.preventDefault();
+            //HoneyPot Needed
+            //Sent Messege Confirmation
+            //Validate Email
+
+            $('#anim').addClass("animation1");
+            $('.postcard').addClass("send");
+
+
+            let honey = $('#subject').val().trim();
+            let email = $('#email').val().trim();
+            let name = $('#name').val().trim();
+            let msg = $('#message').val().trim();
+
+
+            if (honey) {
+                console.log("Error Bot");
+                setTimeout(failed, 2500);
+            } else {
+                const data = {
+                    email,
+                    name,
+                    msg
+                };
+                $.post('/email', data, function () {
+                    console.log("Server recieved data!")
+                })
+                setTimeout(successfully, 2500);
+            }
+        });
+
+        function successfully() {
+            $(":root").css("--color-info", "#31e284");
+            $('.frame').fadeIn();
+            _notification.attr('class', 'notification');
+            _notification.addClass('-open');
+            _nIcon.css('color', '#31e284');
+            
+
+
+            let _title = 'Success!';
+            let _text = 'Your email has been sent. I will reach out soon!';
+            let _buttonText = 'Thank you';
+            let _icon = 'far fa-check-circle';
+
+            _nTitle.text(_title);
+            _nText.text(_text);
+            _button.text(_buttonText);
+            _nIcon.attr('class', 'notification__icon ' + _icon);
+
+            $('#acceptance').click(function (event) {
+                event.preventDefault();
+                //Redirect to Portfolio
+                window.location.href = "/";
+            })
+        }
+
+        function failed() {
+            $(":root").css("--color-info", "#ff3f3f");
+            $('.frame').fadeIn();
+            _notification.attr('class', 'notification');
+            _notification.addClass('-open');
+            _nIcon.css('color', '#ff3f3f');
+
+            let _title = 'Oh snap!';
+            let _text = 'An error has occured. Try Again Later.';
+            let _buttonText = 'Dismiss';
+            let _icon = 'fas fa-exclamation-circle';
+
+            _nTitle.text(_title);
+            _nText.text(_text);
+            _button.text(_buttonText);
+            _nIcon.attr('class', 'notification__icon ' + _icon);
+
+            $('#acceptance').click(function (event) {
+                event.preventDefault();
+                //Redirect to Refresh Contact Page
+                window.location.href = "/contact";
+            })
+        }
+    </script>
+    <script>
+        $('#button, #buttons').on('click', function () {
+            $(".opac-navigator").fadeToggle("slow", "linear");
+            // Animation complete.
+        });
+        // Input Lock
+        $('textarea').blur(function () {
+            $('#hire textarea').each(function () {
+                $this = $(this);
+                if (this.value != '') {
+                    $this.addClass('focused');
+                    $('textarea + label + span').css({
+                        'opacity': 1
+                    });
+                } else {
+                    $this.removeClass('focused');
+                    $('textarea + label + span').css({
+                        'opacity': 0
+                    });
+                }
+            });
+        });
+
+        $('#hire .field:first-child input').blur(function () {
+            $('#hire .field:first-child input').each(function () {
+                $this = $(this);
+                if (this.value != '') {
+                    $this.addClass('focused');
+                    $('.field:first-child input + label + span').css({
+                        'opacity': 1
+                    });
+                } else {
+                    $this.removeClass('focused');
+                    $('.field:first-child input + label + span').css({
+                        'opacity': 0
+                    });
+                }
+            });
+        });
+        $('#hire .field:nth-child(2) input').blur(function () {
+            $('#hire .field:nth-child(2) input').each(function () {
+                $this = $(this);
+                if (this.value != '') {
+                    $this.addClass('focused');
+                    $('.field:nth-child(2) input + label + span').css({
+                        'opacity': 1
+                    });
+                } else {
+                    $this.removeClass('focused');
+                    $('.field:nth-child(2) input + label + span').css({
+                        'opacity': 0
+                    });
+                }
+            });
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/ad90603569.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

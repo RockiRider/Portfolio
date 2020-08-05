@@ -1,0 +1,639 @@
+/*---------------Imports---------*/
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&subset=latin-ext');
+
+/*--------------CSS------------*/
+* {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+    -o-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+body,html {
+    height: 100%;
+    width: 100%;
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 400;
+    margin: 0;
+}
+
+::selection {
+    background: #2a2a2a;
+    color: #fff;
+    text-shadow: none;
+}
+
+::-moz-selection {
+    background: #2a2a2a;
+    color: #fff;
+    text-shadow: none;
+}
+
+p {
+    font-family: "Poppins";
+    font-size: 12px;
+    font-weight: 400;
+}
+
+h1 {
+    font-family: "Poppins";
+    font-size: 25px;
+    font-weight: 800;
+}
+
+a {
+    text-decoration: none;
+    -webkit-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    border-bottom: 2px solid #f1f1f1;
+}
+
+a:focus {
+    outline: none;
+}
+
+span {
+    color: #b1b1b1;
+}
+
+/* Back To Top */
+button.back-to-top {
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff;
+    height: 0px;
+    width: 0px;
+    overflow: hidden;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    color: transparent;
+    clear: both;
+    visibility: hidden;
+    position: fixed;
+    cursor: pointer;
+    display: block;
+    border: none;
+    right: 50px;
+    bottom: 75px;
+    font-size: 0px;
+    outline: 0 !important;
+    z-index: 11;
+    transition: all .3s ease-in-out;
+}
+
+button.back-to-top:hover,
+button.back-to-top:active,
+button.back-to-top:focus {
+    outline: 0 !important;
+}
+
+button.back-to-top::before {
+    content: "\f077";
+    font-family: "FontAwesome";
+    display: block;
+    vertical-align: middle;
+    margin: -5px 0 auto;
+}
+
+button.back-to-top.show {
+    display: block;
+    background: #fff;
+    color: #0c0c0c;
+    font-size: 25px;
+    right: 90px;
+    bottom: 35px;
+    height: 50px;
+    width: 50px;
+    visibility: visible;
+    box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 2px 4px 1px rgba(0, 0, 0, 0.25);
+}
+
+button.back-to-top.show:active {
+    box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -webkit-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0px 4px 8px 2px rgba(0, 0, 0, 0.25);
+}
+
+
+
+/* Back to top FINISHED */
+
+@-webkit-keyframes bounce-fade {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@-moz-keyframes bounce-fade {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@-o-keyframes bounce-fade {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@keyframes bounce-fade {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@-webkit-keyframes bounce-fade-two {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@-moz-keyframes bounce-fade-two {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@-o-keyframes bounce-fade-two {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+@keyframes bounce-fade-two {
+    0% {
+        opacity: 0;
+        bottom: 70px;
+    }
+
+    100% {
+        opacity: 1;
+        bottom: 35px;
+    }
+}
+
+.preloader {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    z-index: 999;
+}
+
+.preloader .image {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    left: 50%;
+    top: 50%;
+    margin-left: -25px;
+    margin-top: -25px;
+}
+
+.circle {
+    width: 40px;
+    height: 40px;
+    margin: 0px auto;
+    background-color: #333;
+    border-radius: 100%;
+    -webkit-animation: scaleout 1.0s infinite ease-in-out;
+    -ms-animation: scaleout 1.0s infinite ease-in-out;
+    -o-animation: scaleout 1.0s infinite ease-in-out;
+    animation: scaleout 1.0s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+    0% {
+        -webkit-transform: scale(0.0)
+    }
+
+    100% {
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+@keyframes scaleout {
+    0% {
+        transform: scale(0.0);
+        -webkit-transform: scale(0.0);
+    }
+
+    100% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+        opacity: 0;
+    }
+}
+
+.totality {
+    display: none;
+
+}
+
+.opac-navigator {
+    position: fixed;
+    display: none;
+    width: 35%;
+    height: 100%;
+    top: 0;
+    left: 65%;
+    z-index: 99999;
+    background-color: black;
+}
+
+ul.menu-halfscreen {
+    width: 100%;
+    top: 50%;
+    position: absolute;
+    height: 350px;
+    margin-top: -175px;
+
+}
+
+ul.menu-halfscreen li {
+    font-size: 28px;
+    text-align: center;
+    line-height: 70px;
+    font-weight: 500;
+}
+
+ul.menu-halfscreen li>a {
+    color: #999999;
+    border: 0;
+}
+
+ul.menu-halfscreen li>a:hover {
+    color: #ffffff;
+}
+
+#full {
+    width: 1170px;
+    position: relative;
+    top: 0;
+    margin: 0 auto;
+    z-index: 9997;
+}
+
+#halfscreen {
+    display: none;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    margin: 0 auto;
+    height: 80px;
+    z-index: 9998;
+}
+
+header.trox {
+    position: fixed;
+    width: 100%;
+    margin: 0px auto;
+    height: 80px;
+    z-index: 9999;
+    background: none;
+    top: 0;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+header.trox .headermargline {
+    width: 1170px;
+    margin: 0 auto;
+}
+
+.menubut {
+    position: fixed;
+    right: 5%;
+    top: 20px;
+    z-index: 99999;
+    padding: 20px;
+    background: black;
+    cursor: pointer;
+}
+
+.menubut i {
+    float: right;
+    font-size: 30px;
+    color: white;
+    padding-right: 0px !important;
+}
+
+.menubut i:hover {
+    color: #c3c3c3;
+}
+
+ul.menu-icon {
+    float: right;
+}
+
+ul.menu-icon a {
+    float: right;
+    font-size: 19px;
+    color: white;
+    padding-right: 0px !important;
+}
+
+ul.menu-icon i {
+    padding: 20px;
+    background: black;
+}
+
+ul.menu-icon a:hover {
+    color: #c3c3c3;
+}
+
+header a {
+    color: #000000;
+}
+
+header .logoname>a:hover {
+    opacity: 0.5;
+}
+
+header li {
+    list-style-type: none;
+    margin: 0 auto;
+    float: left;
+    padding-left: 20px;
+}
+
+header li>a {
+    font-size: 16px;
+    color: #999;
+    font-weight: 400;
+    line-height: 80px;
+    display: inline-block;
+    border-bottom: 0;
+}
+
+header li>a:hover {
+    color: #2c2c2c;
+    border-bottom: 2px solid #2c2c2c;
+}
+
+header li>a#active {
+    color: #000000;
+}
+
+header li ul {
+    overflow: hidden;
+    display: none;
+    background: #f9f9f9;
+    z-index: 20;
+}
+
+header li ul li a {
+    line-height: 50px;
+    padding-left: 30px;
+    width: 260px;
+}
+
+header li:hover ul {
+    position: absolute;
+    padding: 0;
+    display: block;
+    width: 260px;
+}
+
+.logoname {
+    margin-top: 15px;
+    margin-left: 100px;
+    font-family: "Poppins";
+    font-size: 25px;
+    font-weight: 800;
+    position: static;
+
+
+}
+
+.menu-bars {
+    margin-top: -25px;
+    margin-right: 120px;
+    font-size: 27px;
+    float: right;
+    text-align: right;
+    line-height: 20px;
+    cursor: pointer;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -ms-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+}
+
+.menu-bars:hover {
+    opacity: 0.5;
+}
+
+/* Content */
+.content {
+    padding-top: 50px;
+    position: relative;
+    width: 65%;
+    margin: 50px auto;
+}
+
+.text-intro {
+    margin-left: 50px;
+    margin-bottom: 100px;
+
+}
+
+.text-intro h1 {
+    font-size: 25px;
+    width: 70%;
+    color: #2c2c2c;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.text-intro p {
+    font-size: 11px;
+    color: #8d8d8d;
+    margin-top: 30px;
+    font-weight: 400;
+    line-height: 22px;
+    width: 40%;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+#full {
+    width: 1170px;
+    height: 405px;
+    margin-bottom: 10px;
+}
+
+#mid {
+    width: 570px;
+    height: 405px;
+}
+
+#top {
+    width: 570px;
+    height: 840px;
+}
+
+
+/* PORTFOLOIO */
+ul {
+    list-style-type: none;
+
+}
+
+.portfolio-grid-view {
+    width: 100%;
+    position: relative;
+    margin: 100px auto;
+    overflow: hidden;
+    list-style-type: none;
+    -webkit-column-count: 2;
+    -moz-column-count: 2;
+    -ms-column-count: 2;
+    -o-column-count: 2;
+    column-count: 2;
+}
+
+
+.gridpro .griddyhover {
+    transform: scaleY(1);
+}
+
+li.gridpro {
+    max-width: 100%;
+    height: auto;
+    width: 770px;
+    position: relative;
+    float: left;
+    margin: 0 0 10px 10px;
+
+}
+
+.griddyhover {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0%;
+    transform: translateY(-50%);
+    z-index: 2;
+    opacity: 0;
+    text-align: center;
+    -webkit-transition: all 0.3s ease-in;
+    -moz-transition: all 0.3s ease-in;
+    -o-transition: all 0.3s ease-in;
+    transition: all 0.3s ease-in;
+    background: #8E793E;
+}
+
+.griddyhover:hover {
+    opacity: 0.96;
+
+}
+
+.griddyhover h1 {
+    font-size: 30px;
+    width: 100%;
+    position: absolute;
+    color: white;
+    font-weight: 700;
+    line-height: 50px;
+
+}
+
+.griddyhover p {
+    font-size: 20px;
+    top: 70px;
+    left: 40px;
+    right: 40px;
+    position: absolute;
+    color: white;
+    font-weight: 400;
+    line-height: 25px;
+    font-family: Verdana, Geneva, sans-serif;
+    line-height: 150%;
+}
+
+li.gridpro img {
+    width: 100%;
+}
+
+
+/* Footer------ */
+footer {
+    width:100%;
+    height: 100px;
+    margin-top: 300px;
+    overflow:hidden;
+    position:relative;
+    z-index: 10;
+    background: #8c8c8c;;
+    
+}
+
+.footercontent {
+    width: 100%;
+    text-align: center;
+    margin-top: 40px;
+
+}
+
+.footercontent a {
+    margin-left: 100px;
+    margin-right: 100px;
+    border-bottom: none;
+    font-size: 15px;
+    color: black;
+}

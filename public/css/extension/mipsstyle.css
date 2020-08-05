@@ -1,0 +1,12 @@
+.logo{
+display:block;
+text-indent:10000px;
+overflow:hidden;
+background: url(../../img/portpics/mipstext.png) center center no-repeat;
+background-position-y:50%;
+height:100%;
+width:100%;
+}
+.oversized p{
+    font-size: 15px;
+}

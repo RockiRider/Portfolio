@@ -1,0 +1,35 @@
+{
+  "name": "blogger",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@okta/oidc-middleware": "^4.0.1",
+    "@okta/okta-sdk-nodejs": "^4.0.0",
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "edge.js": "^1.1.4",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2",
+    "express-fileupload": "^1.1.6",
+    "express-session": "^1.17.1",
+    "jquery": "^3.5.1",
+    "kind-of": "^6.0.3",
+    "minimist": "^1.2.5",
+    "moment-timezone": "^0.5.31",
+    "mongoose": "^5.9.22",
+    "morgan": "^1.10.0",
+    "nodemailer": "^6.4.10",
+    "nodemailer-mailgun-transport": "^2.0.0",
+    "nodemon": "^2.0.4",
+    "quill-delta-to-html": "^0.12.0",
+    "startbootstrap-clean-blog": "^5.0.9"
+  }
+}

@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!--Version 1.0-->
+  <meta charset="utf-8" />
+  <title>Cache Simulation LRU</title>
+  <meta name="description" content="A JavaScript simulation of hardware cache with k-way associativity and LRU replacement strategy" />
+  <meta name="keywords" content="Cache, Simulation, LRU, Calculator, Simulator">
+  <meta name="author" content="Tsotne Gvadzabia"/>
+  <script src="https://kit.fontawesome.com/ad90603569.js" SameSite="none Secure" crossorigin="anonymous"></script>
+  <style>
+    .mainer {
+      margin: auto;
+      width: 50%;
+      border: 3px solid green;
+      padding: 10px;
+    }
+
+    h1 {
+      text-align: center;
+      padding-bottom: 30px;
+    }
+
+    .explanation {
+      margin: auto;
+      width: 60%;
+      border: 3px solid purple;
+      padding: 10px;
+    }
+
+    .example {
+      margin: auto;
+      width: 60%;
+      border: 3px solid blue;
+      padding: 10px;
+    }
+
+    .example ul {
+      margin-top: 0;
+    }
+
+    .example h4 {
+
+      margin: 0px;
+      padding: 2px;
+      font-weight: 400;
+    }
+
+    .inputer {
+      margin: auto;
+      width: 60%;
+      border: 3px solid red;
+      padding: 10px;
+      text-align: center;
+
+    }
+
+    .inputer h3 {
+      margin-top: 0;
+      text-align: center;
+    }
+
+
+    .btnArea {
+      margin: auto;
+      width: 50%;
+      padding-left: 5%;
+    }
+
+    .btnArea button {
+      margin-right: 15%;
+    }
+
+    button {
+      background-color: #555555;
+      border: none;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 12px;
+      margin-top: 15px;
+      margin-bottom: 20px;
+      cursor: pointer;
+    }
+
+
+    .asw {
+      margin: auto;
+      width: 60%;
+      border: 3px solid red;
+      padding: 10px;
+      text-align: center;
+    }
+
+    .allSec {
+      margin-bottom: 50px;
+
+    }
+
+    .simArea {
+      margin: auto;
+      width: 50%;
+      padding: 10px;
+
+    }
+
+    label {
+      margin-left: 0;
+      padding-left: 0;
+      color: #111;
+      font-weight: bold;
+      display: block;
+      width: 150px;
+      float: left;
+    }
+
+
+
+    /** Other **/
+    .btn {
+      margin-left: 5px;
+      position: relative;
+      color: red;
+      width: 256px;
+      height: 64px;
+      line-height: 64px;
+      transition: all 0.3s;
+      cursor: pointer;
+
+
+
+    }
+
+    span {
+      transition: all 0.3s;
+    }
+
+    .btn::before,
+    .btn::after {
+      content: "";
+      position: absolute;
+      transition: all 0.3s;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+
+    .sim::before,
+    .sim::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      bottom: 0;
+      left: 0;
+      z-index: 1;
+      transition: all 0.3s;
+      border: 1px solid rgba(43, 9, 9, 0.5);
+    }
+
+    .sim:hover::after {
+      animation-name: rotatecw;
+      animation-duration: 2s;
+    }
+
+    .sim:hover::before {
+      animation-name: rotateccw;
+      animation-duration: 3s;
+    }
+
+    .sim:hover::after,
+    .sim:hover::before {
+      left: 96px;
+      width: 64px;
+
+      animation-iteration-count: infinite;
+      animation-timing-function: linear;
+    }
+
+    @keyframes rotatecw {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(360deg);
+      }
+    }
+
+    @keyframes rotateccw {
+      from {
+        transform: rotate(0deg);
+      }
+
+      to {
+        transform: rotate(-360deg);
+      }
+    }
+    .github{
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+
+<body>
+  <div class="mainer">
+    <h1>Cache Simulation <a class="github" href="https://github.com/RockiRider/LRU-Cache-Simulator"><i class="fab fa-github-square"></i></a></h1>
+    <section class="explanation allSec">
+      <h3>Explanation</h3>
+      <p>Each Simulation Assumes the Cache is initially Empty.</p>
+      <p>The cache definition is stated as 4 positive intergers that describes the cache</p>
+      <ul>
+        <li>W is the number of bits in one word. This number will be a multiple of 8.</li>
+        <li>C is the number of data bytes in the cache. This number will be a power of 2. (In C, we do not count the
+          space needed to store tags, just the space needed to store data.)</li>
+        <li>B is the number of bytes in one cache block. This number will be a divisor of C.</li>
+        <li>k is the number of lines in a block. This number will be a divisor of B.</li>
+      </ul>
+      <p>Input the cache description as well as the cache and click Simulate</p>
+      <p>The output will be a String containing the letter C, M or both.</p>
+      <p>For each memory access in the input, the page will print a 'C' if it is served by the cache, and print 'M' if
+        it is served by the memory.</p>
+    </section>
+    <section class="example allSec">
+      <h3>Example</h3>
+      <p>Follow this layout in order for the simulator to work.</p>
+      <h4 style="padding-bottom: 0; color: red;">-Warning-</h4>
+      <ul>
+        <li>
+          <p>Only enter Positive Integers</p>
+        </li>
+        <li>
+          <p>Ensure to leave a new line after each cache.</p>
+        </li>
+        <li>
+          <p style="margin-top: 5px;">Ensure to leave a space between each cache definition.</p>
+        </li>
+      </ul>
+      <label for="define"> Cache Definition:</label>
+      <input type="text" name="define" placeholder="32 1024 64 4" disabled /><br />
+      <br />
+      <ul id="showerr">
+        <li>W = 32</li>
+        <li>C = 1024</li>
+        <li>B = 64</li>
+        <li>k = 4</li>
+      </ul>
+      <label for="show">Cache:</label>
+      <textarea id="show" rows="11" cols="22" disabled>409 
+658
+915
+1172
+661
+1429
+1168
+403
+925
+1172
+</textarea>
+      <h3>Output:</h3>
+      <h4>MMMM </h4>
+      <h4>CMCM </h4>
+      <h4>MC</h4>
+
+    </section>
+    <section class="inputer allSec">
+      <h3>Input</h3>
+      <label for="define"> Cache Definition:</label>
+      <input type="text" id="define" name="define" placeholder="8 4 2 2" required /><br /><br />
+      <label for="input">Cache:</label>
+      <textarea id="input" rows="4" cols="22"></textarea>
+      <br />
+      <div class="btnArea">
+        <button id="clearAll">Clear All</button>
+        <button id="clearCache">Clear Cache</button>
+      </div>
+      <div class="simArea">
+        <div class="btn sim" id="startSim">
+          <span>Simulate</span>
+        </div>
+      </div>
+
+    </section>
+
+    <section class="asw allSec">
+      <h3>Output</h3>
+      <p id="display"></p>
+      <div class="btnOutArea">
+        <button id="copyToClip">Copy Answer to Clipboard</button>
+      </div>
+      <table>
+        <tr>
+          <th>Index Size:</th>
+          <td id="index"></td>
+        </tr>
+        <tr>
+          <th>Offset Size:</th>
+          <td id="offset"></td>
+        </tr>
+        <tr>
+          <th>Tag Size:</th>
+          <td id="tag"></td>
+        </tr>
+      </table>
+    </section>
+  </div>
+
+
+  <script>
+    getDef = () => {
+      return document.getElementById("define").value
+    }
+    getInput = () => {
+      return document.getElementById("input").value
+    }
+    calc = (addressLength, arrOnlyTags, k) => {
+      var output = "";
+
+      // Grouping
+      arrCurrent = [];
+      for (var g = 0; g < addressLength; g++) {
+        if (!arrCurrent.includes(arrOnlyTags[g])) {
+          if (arrCurrent.length < k) {
+            arrCurrent.push(arrOnlyTags[g]);
+            output = output + "M";
+          } else if (arrCurrent.length = k) {
+            arrCurrent.shift();
+            arrCurrent.push(arrOnlyTags[g]);
+            output = output + "M";
+          } else {
+            alert("ERROR");
+          }
+        } else {
+          let temp = " ";
+          let found = arrCurrent.lastIndexOf(arrOnlyTags[g]);
+          arrCurrent.push(temp);
+          let tempfind = arrCurrent.lastIndexOf(temp);
+          arrCurrent.copyWithin(tempfind, found, found + 1);
+          arrCurrent.splice(found, 1);
+          output = output + "C";
+
+        }
+      }
+      return output;
+    }
+
+    //Returns true if there are multiple blocks
+    checkMult = (indexSize, offsetSize, tagSize, arrAddress) => {
+      let addressLength = arrAddress.length;
+      if (indexSize == 0) {
+        return false;
+      }
+
+      arrIndex = [];
+
+      for (var y = 0; y < addressLength; y++) {
+
+        var temp = arrAddress[y].substring(tagSize, tagSize + indexSize);
+        arrIndex.push(temp);
+
+      }
+
+      var booleaner = false;
+      // Check if they all equal eachother
+      arrIndex.forEach((element, index) => {
+        if (index > 0) {
+          if (element !== arrIndex[index - 1]) {
+            booleaner = true;
+          }
+        }
+      })
+      return booleaner;
+    };
+
+
+    multipleBlocks = (arrAddress, blockSize, k) => {
+      var output = "";
+      addressLength = arrAddress.length;
+      return output
+    };
+
+    refine = (input, k) => {
+      var arr = input.match(new RegExp('.{1,' + k + '}', 'g'));
+      var finished = ""
+      arr.forEach(element => {
+        finished += element + "<br>";
+      });
+
+
+      return finished;
+    }
+
+    startSimulation = () => {
+      var output = "";
+      var defined = getDef();
+      var question = getInput();
+
+      // ToDo defined in correct format with spaces
+
+      var arrDefinition = defined.split(" ");
+      var arrQuestions = question.match(/[^\r\n]+/g);
+
+      // To Do check if array is correct length of 4.
+
+
+      // Declerations Below
+      const w = arrDefinition[0];
+      const c = arrDefinition[1];
+      const b = arrDefinition[2];
+      const k = arrDefinition[3];
+
+
+      let indexSizeCalc = c / b;
+      let offsetSizeCalc = b / k;
+      let blockSize = indexSizeCalc;
+
+
+      var indexSize = Math.log2(indexSizeCalc);
+      var offsetSize = Math.log2(offsetSizeCalc);
+      var tagSize = w - indexSize - offsetSize;
+      console.log(arrQuestions)
+
+      //Calculations
+      var qLength = arrQuestions.length;
+
+      var arrAddress = [];
+
+      for (var i = 0; i < qLength; i++) {
+        let toNum = parseInt(arrQuestions[i]);
+        let binaryVal = toNum.toString(2);
+
+        //Ensure same number of binary bits
+        if (binaryVal.length < w) {
+          let difference = w - binaryVal.length;
+          for (var z = 0; z < difference; z++) {
+            binaryVal = '0' + binaryVal;
+          }
+        }
+        arrAddress.push(binaryVal);
+      }
+      console.log(arrAddress);
+
+      //Tag Generation
+
+      var arrOnlyTags = [];
+      var addressLength = arrAddress.length;
+      var removeChar = parseInt(indexSize + offsetSize);
+      //Checks if there are multiple blocks or not.
+      var multipleChecker = checkMult(indexSize, offsetSize, tagSize, arrAddress);
+
+      //Fully associative!!
+      if (removeChar == 0) {
+        arrOnlyTags = arrAddress;
+        output += calc(addressLength, arrOnlyTags, k);
+      } else if (multipleChecker) {
+        output = multipleBlocks(arrAddress, blockSize, k);
+      } else {
+        //Set associative
+        for (var y = 0; y < addressLength; y++) {
+
+          var temp = arrAddress[y].slice(0, -removeChar);
+          arrOnlyTags.push(temp);
+
+        }
+        output += calc(addressLength, arrOnlyTags, k);
+      }
+      console.log(arrOnlyTags);
+
+      //Final Edits
+      var finalOutput = refine(output, k);
+      document.getElementById("index").innerHTML = indexSize;
+      document.getElementById("tag").innerHTML = tagSize;
+      document.getElementById("offset").innerHTML = offsetSize;
+
+      //Handle Errors
+      if (w > 1024) {
+        alert("W Exceeds 1024 Limit!");
+        document.getElementById("display").innerHTML = "Error";
+      }
+      /**
+      else if(c > Math.pow(2, w)){
+        alert("C (The size of the cache) exceeds the number of available addresses!");
+        document.getElementById("display").innerHTML = "Error";
+      }
+      **/
+      else if (k * c / b > Math.pow(2, 20)) {
+        alert("kC/B is more than 2^20");
+        document.getElementById("display").innerHTML = "Error";
+      } else {
+        document.getElementById("display").innerHTML = finalOutput;
+      }
+    };
+
+    // Buttons
+    resetAll = () => {
+      document.getElementById("input").value = "";
+      document.getElementById("define").value = "";
+    };
+    clear = () => {
+      document.getElementById("input").value = "";
+    };
+
+
+    //Copy Answer To Clipboard
+
+    function copyToClipboard(elem) {
+      // create hidden text element, if it doesn't already exist
+      var targetId = "_hiddenCopyText_";
+      var isInput = elem.tagName === "INPUT" || elem.tagName === "TEXTAREA";
+      var origSelectionStart, origSelectionEnd;
+      if (isInput) {
+        // can just use the original source element for the selection and copy
+        target = elem;
+        origSelectionStart = elem.selectionStart;
+        origSelectionEnd = elem.selectionEnd;
+      } else {
+        // must use a temporary form element for the selection and copy
+        target = document.getElementById(targetId);
+        if (!target) {
+          var target = document.createElement("textarea");
+          target.style.position = "absolute";
+          target.style.left = "-9999px";
+          target.style.top = "0";
+          target.id = targetId;
+          document.body.appendChild(target);
+        }
+        target.textContent = elem.textContent;
+      }
+      // select the content
+      var currentFocus = document.activeElement;
+      target.focus();
+      target.setSelectionRange(0, target.value.length);
+
+      // copy the selection
+      var succeed;
+      try {
+        succeed = document.execCommand("copy");
+      } catch (e) {
+        succeed = false;
+      }
+      // restore original focus
+      if (currentFocus && typeof currentFocus.focus === "function") {
+        currentFocus.focus();
+      }
+
+      if (isInput) {
+        // restore prior selection
+        elem.setSelectionRange(origSelectionStart, origSelectionEnd);
+      } else {
+        // clear temporary content
+        target.textContent = "";
+      }
+      return succeed;
+    }
+
+    document.getElementById("startSim").addEventListener("click", startSimulation);
+    document.getElementById("clearAll").addEventListener("click", resetAll);
+    document.getElementById("clearCache").addEventListener("click", clear);
+
+    document.getElementById("copyToClip").addEventListener("click", function () {
+      copyToClipboard(document.getElementById("display"));
+    });
+  </script>
+</body>
+
+</html>

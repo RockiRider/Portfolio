@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="keywords" content="Tsotne Gvadzabia, Computer Science, Web Developer, Game Maker, Arduino, Java Programming,Dev Blog, Blog, Computer Science Blog, Projects">
+  <meta name="description" content="Essentially a Dev Blog for Multiple Projects that I will use to talk about my projects & ideas.">
+  <meta name="author" content="Tsotne Gvadzabia">
+  <link rel="shortcut icon" href="/img/myicon.jpg">
+ 
+  <title>Tsot's Blog || Developer Blog</title>
+ 
+  <!-- Bootstrap core CSS -->
+  <link href="/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" type='text/css'>
+ 
+  <!-- FontAweomse -->
+  <script src="https://kit.fontawesome.com/ad90603569.js" SameSite="none Secure" crossorigin="anonymous"></script>
+  <!-- Custom fonts -->
+  <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+    rel='stylesheet' type='text/css'>
+
+ 
+  <link href="/css/main.css" rel="stylesheet" type='text/css'>
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111009783-4"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-111009783-4');
+  </script>
+
+
+
+</head>
+ 
+<body>
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-light fixed-top" id="mainNav">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/">Tsotne Gvadzabia</a>
+      <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive"
+        aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+        <i class="fa fa-bars"></i>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarResponsive">
+        <ul class="navbar-nav ml-auto">
+          @if(auth)
+            <li class="nav-item">
+              <a class="nav-link" href="/blog">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/">My Portfolio</a>
+            </li>
+            <li class="nav-item">
+             <a class="nav-link" href="/contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/admin">Admin Page</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/blog/posts/new">New Post</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" id="logoutClick"><form id="logoutForm" action="/logout" method="POST">Logout</form></a>
+            </li>
+          @else
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/blog">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/">My Portfolio</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/contact">Contact</a>
+          </li>
+          @endif 
+        </ul>
+      </div>
+    </div>
+  </nav>
+ 
+  @!section('content')
+  <!-- Footer -->
+  <footer>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <hr>
+          <ul class="list-inline text-center">
+            <li class="list-inline-item">
+              <a href="https://www.linkedin.com/in/tsotne-gvadzabia/">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-linkedin fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://stackoverflow.com/users/8645413/rockirider?tab=profile">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-stack-overflow fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+            <li class="list-inline-item">
+              <a href="https://github.com/RockiRider">
+                <span class="fa-stack fa-lg">
+                  <i class="fa fa-circle fa-stack-2x"></i>
+                  <i class="fab fa-github fa-stack-1x fa-inverse"></i>
+                </span>
+              </a>
+            </li>
+          </ul>
+          <p class="copyright text-muted">Copyright &copy; Tsotne 2019</p>
+        </div>
+      </div>
+    </div>
+  </footer>
+ 
+  <!-- Bootstrap core JavaScript -->
+  <script src="/vendor/jquery/jquery.min.js"></script>
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+ 
+  <!-- Custom scripts from template -->
+  <script src="/js/clean-blog.min.js"></script>
+  <script>
+    $(document).ready(function(){
+        //javascript
+        if(document.getElementById('logoutClick')){
+          document.getElementById("logoutClick").onclick = function() {
+            document.getElementById("logoutForm").submit();
+          }
+        }
+    });
+  </script>
+</body>
+ 
+</html>

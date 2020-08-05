@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tsotne Gvadzabia - MIPS</title>
+    <meta name="description" content="Tsotne Gvadzabia. A small basic explanation of the MIPS Assembly Language, which is a very low level lanugauge. I created some basic documentation and explaination for the short program I wrote that allows the user to manipulate the data between CPU Registers through QtSpim">
+      
+    <meta name="Keywords" content="Tsotne Gvadzabia, Computer Science, MIPS, Assembly Language, Mips Asseblmy Language, Low Level Languages , QtSpim with Mips, Mips explanation, CPU Registers with Mips, CPU registers with QtSpim, Registers QtSpim, Mips Registers">
+    <link rel="shortcut icon" href="/img/icons/myicon.jpg">
+      
+    <link rel="stylesheet" type="text/css" href="/css/extension/mipsstyle.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/extension/common.css"/>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/jarallax-0.2.2.js"></script>
+    <script type="text/javascript">
+      var jarallax
+      init = function() {
+        jarallax = new Jarallax(new ControllerScroll(true));
+        var currentProgress = 0;
+        var progressSteps = 1 / 5;
+        
+        jarallax.setDefault('.container',{opacity:0, display:'none'})
+        
+        jarallax.addAnimation('.logo',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+                                       {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+                                       {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+                                       
+        var animation = jarallax.addAnimation('#slide1',[{progress:'0', display:'block', opacity:'0', top:'100%'},
+                                                         {progress:'10', display:'block', opacity:'1', top:'20%'},
+                                                         {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+                                                         
+        jarallax.cloneAnimation('#slide2',{progress:'+10'}, animation);
+        jarallax.cloneAnimation('#slide3',{progress:'+20'}, animation);
+        jarallax.cloneAnimation('#slide4',{progress:'+30'}, animation);
+        jarallax.cloneAnimation('#slide5',{progress:'+40'}, animation);
+      }
+    </script>
+      
+  </head>
+  <body onLoad='init()'>
+    <div class="preloader" id="preloader">
+        <div class="image">
+        </div>  
+    </div>
+      
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+         <i class="fa fa-times-circle-o"></i>
+        </div>
+    
+        <ul class="menu-halfscreen">
+          <li><a href="/">My Projects</a></li>
+          <li><a href="/blog">My Blog</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </div> 
+<div class="totality"> <!---------DIV Over Everything----->
+        <header class="trox" id="hell">
+
+            <div class="headmargline">
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+            </div>
+        </header>
+    <nav>
+      <ul>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 10, 2000, 30);">Intro</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 20, 2000, 30);">The Code</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 30, 2000, 30);">Explanation </a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 40, 2000, 30);">Gallery</a></li>
+      </ul>
+    </nav>
+    <h1 class="logo"></h1>
+    <div class="container" id="slide1">
+      <h2>Assembly Language</h2>
+      <p>An Assembler Language is a low level programming language which  correspondes to a specific form of computer architecture. </p>
+      <p>High level programming languages (C,Java,etc) on the otherhand are portable across multiple architectures, however require compilers/interpreting.</p>
+        <p>I experimented with the Assembly Language MIPS, which is unique to the MIPS computer architecture. </p>
+    </div>
+      
+    <div class="container" id="slide2">
+     <h2>The Code</h2>
+       <p> This program will load the numbers 20 and 35 into the registers $t0 and $t1 , multiply the numbers together, and then returns both the 64-bit and 32-bit result into registers $t2 and $t3</p>
+    <p> The Code for this is below:</p>
+    <ol style="list-style: none;"> 
+        <li>main: </li>
+        <li>addi $t0 $0 20;</li>
+         <li>addi $t1 $0 35;</li>
+         <li>mult $t0 $t1;</li>
+         <li>mflo $t2;</li>
+         <li>mfhi $t3;</li>
+         <li>Exit:</li>
+         <li>li $v0 10</li>
+         <li>syscall</li>
+    </ol>
+    
+    </div>
+      
+    <div class="container oversized" id="slide3">
+    <h2>The Explanation</h2>
+        <p>The Syntax is very different, simplistic and frankly quite painful to read. </p>
+        <p>Line 1: Keyword main indicates the start of the code. </p>
+        <p>Line 2: Keyword addi performs addition between $0 and 20 and stores the result into $t0. </p>
+        <p>Line 3: Keyword addi performs addition between $0 and 35 and stores the result into $t1. </p>
+        <p>Line 4: Keyword mult performs multiplication between whats stored in the registers $t0 and $t1 and stores it in Lo and Hi Registers.</p>
+        <p>Line 5: Keyword mflo moves the contents of the Lo special register to $t2.</p>
+        <p>Line 6: Keyword mfhi moves the contents of the Hi special register to $t3.</p>
+        <p>Line 7: Keyword Exit stops the program after the next 2 lines are completed. </p>
+        <p>Line 8: Keyword li loads 10 into the register $v0.</p>
+        <p>Line 9: Keyword syscall prints out $v0. </p>
+     
+    </div>
+    <div class="container" id="slide4">
+        <h2>Gallery</h2>
+        
+        <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="img/needscrop/lvl1game.jpg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="img/slideshow/lvl2.png" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="img/slideshow/failure2.png" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+
+</div>
+ <p>I used a program called QtSpim to experiment with MIPS.</p>
+ <a href="http://spimsimulator.sourceforge.net">QtSpim Download</a>       
+    </div>
+    <script type="text/javascript">
+      try{ 
+      var pageTracker = _gat._getTracker("UA-26904605-1");
+      pageTracker._trackPageview();
+      } catch(err) {} 
+        
+   
+    $('#button, #buttons').on('click', function() {
+      $( ".opac-navigator" ).fadeToggle( "slow", "linear" );
+    // Animation complete.
+    });
+    </script>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,355 @@
+/* 
+  ##Device = Desktops
+  ##Screen = 1281px to higher resolution desktops
+*/
+
+@media (min-width: 1281px)and (max-width:1881px) {
+  .preloader .image{
+        left:48%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:50%;
+        left:50%;
+    }
+     ul.menu-halfscreen li{
+        font-size: 24px;
+        margin-right: 55px;
+    }
+    .logoname{
+        margin-left: 5px;
+        width: 40%;
+        margin-left: -1px;
+        margin-top: 20px;
+    }
+    .menu-bars{
+        margin-right: 30px;
+    }
+  
+}
+
+
+
+/* 
+  ##Device = Laptops, Desktops
+  ##Screen = B/w 1025px to 1280px
+*/
+
+@media (min-width: 1025px) and (max-width: 1280px) {
+  
+  .preloader .image{
+        left:49%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:100%;
+        left:0%;
+    }
+     ul.menu-halfscreen li{
+        font-size: 20px;
+         margin-right: 55px;
+    }
+     .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    .logoname{
+        margin-left: 5px;
+        font-size: 15px;
+        width: 40%;
+        margin-left: -1px;
+        margin-top: 20px;
+    }
+    @media (min-width: 900px){
+        .logoname{
+          font-size: 18px;  
+        }
+    }
+    .menu-bars{
+        margin-right: 30px;
+    }
+    
+}
+  
+
+ /* ===================================== */
+
+/* 
+  ##Device = Tablets, Ipads (portrait)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) {
+   .preloader .image{
+        left:47%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:100%;
+        left:0%;
+    }
+     ul.menu-halfscreen li{
+        font-size: 20px;
+         margin-right: 55px;
+    }
+     .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    .logoname{
+        margin-left: 5px;
+        font-size: 15px;
+        width: 40%;
+        margin-left: -1px;
+        margin-top: 20px;
+    }
+    @media (min-width: 900px){
+        .logoname{
+          font-size: 18px;  
+        }
+    }
+    .menu-bars{
+        margin-right: 30px;
+    }
+    
+}
+  
+
+ /* ===================================== */
+
+
+/* 
+  ##Device = Tablets, Ipads (landscape)
+  ##Screen = B/w 768px to 1024px
+*/
+
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+  .preloader .image{
+        left:47%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:100%;
+        left:0%;
+    }
+     ul.menu-halfscreen li{
+        font-size: 20px;
+         margin-right: 55px;
+    }
+     .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    .logoname{
+        margin-left: 5px;
+        font-size: 15px;
+        width: 40%;
+        margin-left: -1px;
+        margin-top: 20px;
+    }
+    @media (min-width: 900px){
+        .logoname{
+          font-size: 18px;  
+        }
+    }
+    .menu-bars{
+        margin-right: 30px;
+    }
+}
+
+ /* ===================================== */
+
+
+@media (min-width: 461px) and (max-width: 767px){
+  .h1{
+        font-size: 16px;
+    }
+     .preloader .image{
+        left:44%;
+        top: 50%;
+    }
+     .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    ul.menu-halfscreen li{
+        font-size: 17px;
+        margin-right: 55px;
+        
+    }
+    .logoname{
+        font-size: 12px;
+        margin-left: -1px;
+        margin-top: 20px;
+        width:40%;
+        display: none;
+        
+    }
+     @media (min-width: 520px){
+         .logoname{
+             display: inherit; 
+         }
+    }
+      @media (min-width: 580px){
+          .logoname{
+              font-size: 14px;
+          }
+    }
+    .menu-bars{
+        font-size: 25px;
+         margin-top: 27px;
+        margin-right: 25px;
+    }
+     @media (min-width: 520px){
+         .menu-bars{
+          margin-top: -25px;   
+         }
+    }
+     footer{
+        height: 80px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 25px;
+        width: 25px;
+        right: 8px;
+        font-size: 16px;
+    }
+    
+    /*    FORM STUFF */
+      input::placeholder {
+        font-size: 9px;
+          
+    }
+    form .field label{
+        font-size:10px;
+        padding: 20px 0;
+        
+    }
+    form .field input[type="text"],
+    form .field input[type="email"],
+    form .field textarea {
+        
+         margin-left: 10px;
+    }
+  
+  
+}
+
+ /* ===================================== */
+
+/* 
+  ##Device = Low Resolution Tablets, Mobiles (Landscape)
+  ##Screen = B/w 481px to 767px
+*/
+
+@media (min-width: 441px) and (max-width: 767px) and (orientation:landscape) {
+  
+ 
+  
+}
+
+ /* ===================================== */
+
+/* 
+  ##Device = Most of the Smartphones Mobiles (Portrait)
+  ##Screen = B/w 320px to 479px
+*/
+
+@media (min-width: 330px) and (max-width: 460px) {
+    .h1{
+        font-size: 16px;
+    }
+     .preloader .image{
+        left:44%;
+        top: 50%;
+    }
+     .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    ul.menu-halfscreen li{
+        font-size: 16px;
+        margin-right: 50px;
+        
+    }
+    .logoname{
+        font-size: 10px;
+        margin-left: -1px;
+        margin-top: 10px;
+        width:40%;
+        display: none;
+    }
+    .menu-bars{
+        margin-right: 20px;
+        font-size: 22px;
+        margin-top: 27px;
+    }
+     footer{
+        height: 80px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 25px;
+        width: 25px;
+        right: 8px;
+        font-size: 16px;
+    }
+    
+    /*    FORM STUFF */
+      input::placeholder {
+        font-size: 9px;
+          
+    }
+    form .field label{
+        font-size:10px;
+        padding: 20px 0;
+        
+    }
+    form .field input[type="text"],
+    form .field input[type="email"],
+    form .field textarea {
+        
+         margin-left: 15px;
+    }
+   form .field:hover label {
+    width: 25%;
+    }
+    form .field input[type="text"]:focus + label, 
+    form .field input[type="text"].focused + label,
+    form .field input[type="email"]:focus + label,
+    form .field input[type="text"].focused + label,
+    form .field textarea:focus + label,
+    form .field textarea.focused + label {
+    width: 25%;
+    }
+    
+}

@@ -1,0 +1,594 @@
+/* IPHONEEE (portrait) */
+@media (min-width: 320px) and (max-width: 480px) {
+    
+    h1{
+        font-size: 16px;
+    }
+    .preloader .image{
+        left:43%;
+        top: 50%;
+    }
+    .circle{
+        
+    } /*needed ? */
+    .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    ul.menu-halfscreen li{
+        font-size: 16px;
+        margin-right: 20px;
+        
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    /* Logo Name Sizing */
+    .logoname{
+        margin-left: 2px;
+        font-size: 8px;
+        min-width: 15%;
+    }
+    @media (min-width: 340px){
+        .logoname{
+          font-size: 9px;  
+        }
+    }
+    @media (min-width: 400px){
+        .logoname{
+          font-size: 10px;  
+        }
+    }
+    
+    /* Logo ending */
+    .menu-bars{
+        margin-right: 30px;
+    }
+    /*  Content  */
+    
+    .content{
+        padding-top: 5px;
+    }
+    .text-intro{
+        margin-left: 30px;
+        margin-bottom:25px;
+        margin-right: -50px;
+    }
+    .text-intro h1{
+        font-size: 13px;
+        line-height:20px;
+    }
+    /* Griddy uppp */
+     #mid{
+       height:100%;
+    }
+    #top{
+       height: 100%; 
+       
+    }
+    #full{
+        height: 100%;      /* These ids mark the overlay at 100% */
+        margin-left: -20px;
+        
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -20px;
+        margin-bottom: 30px;
+    }
+   
+    .griddyhover{
+        height: 100%;
+    }
+    .mid {
+        height: 97.5%;
+    }
+    .tall{
+        height: 99%;
+    }
+    .griddyhover h1{
+        line-height: 10px;
+        font-size: 12px;
+    }
+    .griddyhover p{
+        font-size: 11px;
+        top: 20%;
+        left: 0%;
+        right: 0px;
+        line-height: 15px;
+    }
+    
+    
+    /* Footer */    
+    footer{
+        height: 80px;
+        margin-top: 0px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 25px;
+        width: 25px;
+        right: 8px;
+        font-size: 16px;
+    }
+    
+    
+    /* Contact Page Specifics */
+    
+input::placeholder {
+    font-size: 11px;
+}
+    
+}
+/* IPAD--- (portrait) */
+@media (min-width: 481px) and (max-width: 767px) {
+    h1{
+        font-size: 16px;
+    }
+    .preloader .image{
+        left:45%;
+        top: 50%;
+    }
+    .circle{
+        
+    } /*needed ? */
+    .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    ul.menu-halfscreen li{
+        font-size: 16px;
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    /* Logo Name Sizing */
+    .logoname{
+        margin-left: 0px;
+        font-size: 12px;
+        min-width: 15%;
+    }
+      @media (min-width: 720px){
+        .logoname{
+          font-size: 15px;  
+        }
+    }
+     /* Logo ending */
+    .menu-bars{
+        margin-right: 30px;
+    }
+    /*  Content  */
+    
+    .content{
+        padding-top: 5px;
+    }
+    .text-intro{
+        margin-left: 30px;
+        margin-bottom:25px;
+        margin-right: -50px;
+    }
+    .text-intro h1{
+        font-size: 13px;
+        line-height:25px;
+    }
+    /* Griddy uppp */
+     #mid{
+       height:100%;
+    }
+    #top{
+       height: 100%; 
+       
+    }
+    #full{
+        height: 100%;      /* These ids mark the overlay at 100% */
+        margin-left: -20px;
+        
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -20px;
+        margin-bottom: 30px;
+    }
+   
+    .griddyhover{
+        height: 110%;
+    }
+    .mid {
+        height: 97.5%;
+    }
+    .tall{
+        height: 99%;
+    }
+    .griddyhover h1{
+        line-height: 10px;
+        font-size: 14px;
+    }
+    .griddyhover p{
+        font-size: 12px;
+        top: 20%;
+        left: 0%;
+        right: 0px;
+        line-height: 15px;
+    }
+    
+    
+    /* Footer */    
+    footer{
+        height: 80px;
+        margin-top: 0px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        font-size: 20px;
+        bottom: 30px;
+    }
+    input::placeholder {
+        font-size: 12px;
+    }
+}
+
+/* Landscape IPADs */
+@media (min-width: 768px) and (max-width: 1024px) and (orientation: landscape) {
+      h1{
+        font-size: 16px;
+    }
+    .preloader .image{
+        left:49%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    ul.menu-halfscreen li{
+        font-size: 20px;
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    /* Logo Name Sizing */
+    .logoname{
+        margin-left: 5px;
+        font-size: 15px;
+        min-width: 15%;
+    }
+      @media (min-width: 900px){
+        .logoname{
+          font-size: 18px;  
+        }
+    }
+     /* Logo ending */
+    .menu-bars{
+        margin-right: 30px;
+    }
+    /*  Content  */
+    
+    .content{
+        padding-top: 5px;
+    }
+    .text-intro{
+        margin-left: 30px;
+        margin-bottom:50px;
+        margin-right: 40px;
+    }
+    .text-intro h1{
+        font-size: 16px;
+        line-height:30px;
+    }
+    /* Griddy uppp */
+     #mid{
+       height:100%;
+    }
+    #top{
+       height: 100%; 
+       
+    }
+    #full{
+        height: 100%;      /* These ids mark the overlay at 100% */
+        margin-left: -20px;
+        
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -20px;
+        margin-bottom: 30px;
+    }
+   
+    .griddyhover{
+        height: 100%;
+    }
+    
+    .griddyhover h1{
+        line-height: 20px;
+        font-size: 18px;
+    }
+    .griddyhover p{
+        font-size: 15px;
+        top: 20%;
+        left: 0%;
+        right: 0px;
+        line-height: 20px;
+    }
+    
+    /* Footer */    
+    footer{
+        height: 80px;
+        margin-top: 0px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        font-size: 20px;
+        bottom: 30px;
+    }
+    input::placeholder {
+        font-size: 13px;
+    }
+    
+}
+/* Portrait Ipads */
+@media (min-width: 768px) and (max-width: 1024px) {
+    h1{
+        font-size: 16px;
+    }
+    .preloader .image{
+        left:49%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:100%;
+        left:0%
+    }
+    ul.menu-halfscreen li{
+        font-size: 20px;
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    /* Logo Name Sizing */
+    .logoname{
+        margin-left: 5px;
+        font-size: 15px;
+        min-width: 15%;
+    }
+      @media (min-width: 900px){
+        .logoname{
+          font-size: 18px;  
+        }
+    }
+     /* Logo ending */
+    .menu-bars{
+        margin-right: 30px;
+    }
+    /*  Content  */
+    
+    .content{
+        padding-top: 5px;
+    }
+    .text-intro{
+        margin-left: 30px;
+        margin-bottom:50px;
+        margin-right: 40px;
+    }
+    .text-intro h1{
+        font-size: 16px;
+        line-height:30px;
+    }
+    /* Griddy uppp */
+     #mid{
+       height:100%;
+    }
+    #top{
+       height: 100%; 
+       
+    }
+    #full{
+        height: 100%;      /* These ids mark the overlay at 100% */
+        margin-left: -20px;
+        
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -20px;
+        margin-bottom: 30px;
+    }
+   
+    .griddyhover{
+        height: 100%;
+    }
+    
+    .griddyhover h1{
+        line-height: 20px;
+        font-size: 18px;
+    }
+    .griddyhover p{
+        font-size: 15px;
+        top: 20%;
+        left: 0%;
+        right: 0px;
+        line-height: 20px;
+    }
+    
+    
+    /* Footer */    
+    footer{
+        height: 80px;
+        margin-top: 0px;
+        bottom: 0px;
+        
+    }
+    .footercontent{
+        text-align: center;
+        margin-top: 30px;
+    }
+    .footercontent a{
+        font-size: 12px;
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+    button.back-to-top.show{
+        height: 40px;
+        width: 40px;
+        right: 20px;
+        font-size: 20px;
+        bottom: 30px;
+    }
+    
+}
+
+
+
+@media (min-width: 1025px) and (max-width: 1499px) {
+    .preloader .image{
+        left:50%;
+        top: 50%;
+    }
+    .opac-navigator{
+        width:50%;
+        left:50%
+    }
+    ul.menu-halfscreen li{
+        font-size: 25px;
+    }
+    .menubut{
+        right: 1%;
+        padding: 1px;
+    }
+    /* Logo Name Sizing */
+    .logoname{
+        margin-left: 10px;
+        font-size: 22px;
+        min-width: 15%;
+    }
+      @media (min-width: 1150px){
+        .logoname{
+            margin-left: 15px;
+        }
+    }
+      
+     /* Logo ending */
+    .menu-bars{
+        margin-right: 30px;
+    }
+     button.back-to-top.show{
+        height: 50px;
+        width: 50px;
+        right: 20px;
+        font-size: 25px;
+        bottom: 35px;
+    }
+}
+
+/* PORTFOLIO TWEAKING START --------------------- */
+@media (min-width:1110px) and (max-width:1269px){
+    .content{
+        margin-left: 300px;
+    }
+}
+@media (min-width:1270px) and (max-width:1376px){
+    .content{
+        margin-left: 340px;
+    }
+}
+@media (min-width:1377px) and (max-width:1549px){
+    .content{
+        margin-left: 340px;
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -40px;
+        margin-bottom: -25px;
+    }
+    .griddyhover{
+        width: 80%;
+        height: 80%;
+    }
+    #mid{
+        width: 456px;
+        height: 324px;
+    }
+    #top{
+        width: 456px;
+        height: 672px;
+    }
+    #full{
+        width: 936px;
+        height: 324px;
+    }
+    
+    li.gridpro img{
+        width: 80%;
+    }
+}
+@media (min-width:1550px) and (max-width:1881px){
+    .content{
+        margin-left: 450px;
+    }
+    li.gridpro{
+        max-width: 100%;
+        margin-left: -40px;
+        margin-bottom: -25px;
+    }
+    .griddyhover{
+        width: 90%;
+        height: 90%;
+    }
+    #mid{
+        width:513px;
+        height: 365px;
+    }
+    #top{
+        width: 513px;
+        height: 756px;
+        
+    }
+    #full{
+        width: 1053px;
+        height: 365px;
+        margin-bottom: 5px;
+        margin-left: -40px;
+    }
+    li.gridpro img{
+        width: 90%;
+    }
+    
+}

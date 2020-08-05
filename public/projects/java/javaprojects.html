@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="/css/extension/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/extension/javastyle.css"/>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css"/>
+    <link rel="shortcut icon" href="/img/icons/myicon.jpg">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/jarallax-0.2.2.js"></script>
+    <script type="text/javascript">
+      var jarallax
+      init = function() {
+        jarallax = new Jarallax(new ControllerScroll(true));
+        var currentProgress = 0;
+        var progressSteps = 1 / 5;
+        
+        jarallax.setDefault('.container',{opacity:0, display:'none'})
+        
+        jarallax.addAnimation('.logo',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+                                       {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+                                       {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+                                       
+        var animation = jarallax.addAnimation('#slide1',[{progress:'0', display:'block', opacity:'0', top:'100%'},
+                                                         {progress:'10', display:'block', opacity:'1', top:'20%'},
+                                                         {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+                                                         
+        jarallax.cloneAnimation('#slide2',{progress:'+10'}, animation);
+        jarallax.cloneAnimation('#slide3',{progress:'+20'}, animation);
+        jarallax.cloneAnimation('#slide4',{progress:'+30'}, animation);
+        jarallax.cloneAnimation('#slide5',{progress:'+40'}, animation);
+      }
+    </script>
+      
+  </head>
+  <body onLoad='init()'>
+    <div class="preloader" id="preloader">
+        <div class="image">
+        </div>  
+    </div>
+      
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+         <i class="fa fa-times-circle-o"></i>
+        </div>
+    
+        <ul class="menu-halfscreen">
+          <li><a href="/">My Projects</a></li>
+          <li><a href="/blog">My Blog</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </div> 
+<div class="totality"> <!---------DIV Over Everything----->
+        <header class="trox" id="hell">
+
+            <div class="headmargline">
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+            </div>
+        </header>
+    <nav>
+      <ul>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 10, 2000, 30);">Mini-Program List</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 20, 2000, 30);">Project List</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 30, 2000, 30);">Future Developments</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 40, 2000, 30);">Gallery</a></li>
+      </ul>
+    </nav>
+    <h1 class="logo"></h1>
+    <div class="container" id="slide1">
+      <h2>Mini-Program List</h2>
+        <p>I created a series of small programs that perform small daily tasks which I would then run through the terminal.</p>
+        <p>
+        <ul>
+            <li><a href="https://codepad.co/snippet/D3WDPsja">Underground Information Bot</a></li>
+            <li><a href="https://codepad.co/snippet/zSDWptLd">Art Gallery Informat</a></li>
+            <li><a href="https://codepad.co/snippet/o0H095uW">Endangered Animals</a></li>
+            <li><a href="https://codepad.co/snippet/sRISW1tr">Paralympic Swimming Regulations</a></li>
+            <li><a href="https://codepad.co/snippet/M8AfaqZD">Garden Bird Watching</a></li>
+        </ul>
+        
+        </p>
+    </div>
+    <div class="container" id="slide2">
+     <h2>Project List</h2>
+        <ul>
+            <li><a href="https://codepad.co/snippet/VpPLTC0h">Team Quiz-</a></li>
+            <p>A game that tests users on the musical knowledge. </p>
+            <li>Adventure Game-</li>
+            <p>A text-based adventure game that uses co-ordinates to pinpoint and move the player.</p>
+            <li>Chat Bot-</li>
+            <p>A hard coded chat bot that starts and keeps a conversation going with the user.</p>
+            <li>Moragoth-</li>
+            <p> An Online Browser-Based game that has a fantasy setting with unique strategic mechanics.</p>
+        </ul>
+    </div>
+
+    <div class="container" id="slide3">
+    <h2>Further Developments</h2>
+      <p>Im hoping to make an Mobile App out of the Underground Information Bot.</p>
+      <p>I am looking at adding more questions to the team quiz and publishing the quiz online</p>
+      <p>I have decided to move forward with my Adventure Game by switching over from the Netbeans enviroment to work with the Game engine libGDX</p>
+     
+    </div>
+    <div class="container" id="slide4">
+        <h2>Gallery</h2>
+        
+        <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/projects/java/img/needscrop/lvl1game.jpg" style="width:100%">
+    <div class="text">Caption Text</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/projects/java/img/slideshow/lvl2.png" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/projects/java/img/slideshow/failure2.png" style="width:100%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+
+</div>
+        
+    </div>
+</div>
+    <script type="text/javascript">
+      try{ 
+      var pageTracker = _gat._getTracker("UA-26904605-1");
+      pageTracker._trackPageview();
+      } catch(err) {} 
+        
+   
+    $('#button, #buttons').on('click', function() {
+      $( ".opac-navigator" ).fadeToggle( "slow", "linear" );
+    // Animation complete.
+    });
+    </script>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  </body>
+</html>

@@ -1,0 +1,261 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&subset=latin-ext');
+body,html{
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+}
+.home a:link {
+    text-decoration: none;
+    color:white;
+}
+
+.home a:visited {
+    text-decoration: none;
+}
+
+.home a:hover {
+    text-decoration: none;
+}
+
+.home a:active {
+    text-decoration: none;
+}
+#particles-js{
+    height: 100%;
+    background-image: linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.7)),url(../img/backgrounds/num1.jpg)
+}
+.begin{
+ color: white; 
+ margin-left: 48%;
+ width: 100px;
+ position: relative;
+ top: 850px;
+ font-family: "Poppins";
+ font-size: 22px;
+}
+
+/*- -- - - - - Arrow Down--- - - - - */
+.button-wrapper {
+  width: 100%;
+  text-align: center;
+  padding-top: 45px;
+  position: relative;
+}
+.arrow-button {
+  cursor: pointer;
+  width: 47px;
+  height: 40px;
+  margin: 0;
+  border: none;
+  background: none;
+  position: relative;
+  top:840px;
+  left:15px;
+}
+.arrow-button:focus {
+  outline: none;
+}
+.arrow-button:hover .line-a,
+.arrow-button:hover .line-b {
+  background: #949494;
+}
+.line-a {
+  display: inline-block;
+  width: 30px;
+  height: 6px;
+  background: #363636;
+  position: absolute;
+  left: 0;
+  top: 13px;
+  transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.line-b {
+  display: inline-block;
+  width: 30px;
+  height: 6px;
+  background: #363636;
+  position: absolute;
+  right: 0;
+  top: 13px;
+  transform: rotate3d(0, 0, 1, -45deg);
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+  -webkit-transition: background 0.5s ease-in-out;
+  -moz-transition: background 0.3s ease-in-out;
+  -o-transition: background 0.3s ease-in-out;
+  -ms-transition: background 0.3s ease-in-out;
+  transition: background 0.3s ease-in-out;
+}
+.arrow-button.down .line-a {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  animation-name: turnAdown;
+  -webkit-animation-name: turnAdown;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  -webkit-animation-fill-mode: forwards;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+}
+.arrow-button.down .line-b {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  animation-name: turnBdown;
+  -webkit-animation-name: turnBdown;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  transform: rotate3d(0, 0, 1, -45deg);
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+}
+.arrow-button.up .line-a {
+  position: absolute;
+  left: 0;
+  top: 13px;
+  animation-name: turnAup;
+  -webkit-animation-name: turnAup;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  transform: rotate3d(0, 0, 1, -45deg);
+  -webkit-transform: rotate3d(0, 0, 1, -45deg);
+}
+.arrow-button.up .line-b {
+  position: absolute;
+  right: 0;
+  top: 13px;
+  animation-name: turnBup;
+  -webkit-animation-name: turnBup;
+  animation-duration: .5s;
+  -webkit-animation-duration: .5s;
+  animation-fill-mode: forwards;
+  -webkit-animation-fill-mode: forwards;
+  animation-timing-function: ease-in-out;
+  -webkit-animation-timing-function: ease-in-out;
+  transform: rotate3d(0, 0, 1, 45deg);
+  -webkit-transform: rotate3d(0, 0, 1, 45deg);
+}
+/* Turn A down */
+@keyframes turnAdown {
+  0% {
+    transform: rotate3d(0, 0, 1, -45deg);
+    top: 10px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 45deg);
+    top: 13px;
+  }
+}
+@-webkit-keyframes turnAdown {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    top: 10px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    top: 13px;
+  }
+}
+/* Turn B down */
+@keyframes turnBdown {
+  0% {
+    transform: rotate3d(0, 0, 1, 45deg);
+    top: 10px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, -45deg);
+    top: 13px;
+  }
+}
+@-webkit-keyframes turnBdown {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    top: 10px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    top: 13px;
+  }
+}
+/* turnAup */
+@keyframes turnAup {
+  0% {
+    transform: rotate3d(0, 0, 1, 45deg);
+    top: 13px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, -45deg);
+    top: 10px;
+  }
+}
+@-webkit-keyframes turnAup {
+  0% {
+    transform: rotate3d(0, 0, 1, 45deg);
+    top: 13px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, -45deg);
+    top: 10px;
+  }
+}
+/* turnBup */
+@keyframes turnBup {
+  0% {
+    transform: rotate3d(0, 0, 1, -45deg);
+    top: 13px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    transform: rotate3d(0, 0, 1, 45deg);
+    top: 10px;
+  }
+}
+@-webkit-keyframes turnBup {
+  0% {
+    -webkit-transform: rotate3d(0, 0, 1, -45deg);
+    top: 13px;
+  }
+  50% {
+    width: 26px;
+  }
+  100% {
+    -webkit-transform: rotate3d(0, 0, 1, 45deg);
+    top: 10px;
+  }
+}

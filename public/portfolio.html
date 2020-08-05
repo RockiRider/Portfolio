@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Tsotne Gvadzabia - Computer Science Student | Web Developer</title>
+    <meta name="description" content="Tsotne Gvadzabia Portfolio, Web Developer,  Computer Science Student">
+    <meta name="Keywords"
+        content="Tsotne Gvadzabia, Computer Science, Web Developer, Game Maker, Arduino, Java Programming, Visual Basic Programming">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="Tsotne Gvadzabia">
+    <link rel="shortcut icon" href="img/myicon.jpg">
+
+    <!-----------Style CSS------------>
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive/style-responsive.css" />
+    <noscript>
+        For full functionality of this site it is necessary to enable JavaScript.
+        Here are the <a href="https://www.enable-javascript.com/" target="_blank">
+            instructions how to enable JavaScript in your web browser</a>.
+    </noscript>
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+    <script type="text/javascript">
+        $(window).on('load', function () {
+            $(".preloader").delay(1000).fadeOut();
+            $(".totality").delay(1500).fadeIn();
+        });
+    </script>
+    <!--[if lt IE 9]>
+<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+<![endif]-->
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-111009783-4"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-111009783-4');
+    </script>
+
+</head>
+
+<body>
+    <!-----LOADER----------->
+
+    <div class="preloader" id="preloader">
+        <div class="image">
+            <div class="circle">
+            </div>
+        </div>
+    </div>
+
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+            <i class="fa fa-times-circle-o"></i>
+        </div>
+
+        <ul class="menu-halfscreen">
+            <li><a href="/">My Projects</a></li>
+            <li><a href="/blog">My Blog</a></li>
+            <li><a href="/contact">Contact Me</a></li>
+        </ul>
+    </div>
+
+
+    <!----------Header--------------->
+    <div class="totality">
+        <header class="trox" id="hell">
+
+            <div class="headmargline">
+
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+
+            </div>
+        </header>
+        <!----------Text Content----->
+        <div class="content">
+            <div class="text-intro" id="intro">
+                <h1>I'm a Computer Science <strong>Student.</strong> <br />All projects are recent and some of them are
+                    still ongoing.<br />Check out my <span id="awesome"></span></h1>
+            </div>
+
+
+            <!-------Porftolio Grid View------->
+            <div id="container">
+                <ul class="porftolio-grid-view">
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/blog_port_img.png">
+                        <a class="link" href="/blog">
+                            <div class="griddyhover mid">
+                                <h1>My Blog</h1>
+                                <p>Created a Blog using NodeJs, ExpressJs, EdgeJs, Otka and Quill. You can find the code
+                                    on GitHub.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/appDev.png">
+                        <a class="link" href="/maintenance">
+                            <div class="griddyhover mid">
+                                <h1>999 Pres</h1>
+                                <p>Pre-Drinking mobile game application made in Unity using C#, targeted at University
+                                    students.<br>Released Soon on Android & iOS</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/andrew2.png">
+                        <a class="link" href="/andrew">
+                            <div class="griddyhover mid">
+                                <h1>Andrew Schulz</h1>
+                                <p>Responsive Landing Page Concept for comedian Andrew Schulz.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/greenwashed.png">
+                        <a class="link" href="https://greenwashed.me">
+                            <div class="griddyhover mid">
+                                <h1>Green Washed Website</h1>
+                                <p>Set up a Ubuntu server from scratch with DNS and SSL configuration and used it to run
+                                    a WordPress Blog</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/calc-proper.png">
+                        <a class="link" href="calculator">
+                            <div class="griddyhover mid">
+                                <h1>JavaScript Calculator</h1>
+                                <p>I created a Calculator using JavaScript whilst trying to replicate a specific design
+                                    that I found through UI Inspirations.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/portfolio-temp.png">
+                        <a class="link" href="https://github.com/RockiRider/RockiRider.github.io">
+                            <div class="griddyhover mid">
+                                <h1>My Portfolio</h1>
+                                <p>I created my portfolio to track & show my projects. Click to find out more</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/yuconz.png">
+                        <a class="link" href="https://github.com/RockiRider/YuconzSystem">
+                            <div class="griddyhover mid">
+                                <h1>HR Software</h1>
+                                <p>A simple in-house tool that can be used to store Employee details, accounts and
+                                    reviews.<br>Built with Java & SQLite in a group Software Engineering Project.<br>
+                                </p>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/pizzaweb.png">
+                        <a class="link" href="/redbrick">
+                            <div class="griddyhover mid">
+                                <h1>Pizza Delivery Website</h1>
+                                <p>Responsive Landing Page Concept for Red Brick Oven using BootStrap 4 & jQuery.</p>
+                            </div>
+                        </a>
+                    </li>
+
+
+                    <li class="gridpro top" id="top">
+                        <img src="img/portpics/spacegametop.png">
+                        <a class="link" href="/spacegoblin">
+                            <div class="griddyhover tall">
+                                <h1>Space Goblin Attack!</h1>
+                                <p>I created a fun 2D game through GML that I am constantly adding to. <br> <br> I will
+                                    be publishing this properly soon.<br> <br> The game has two levels at the moment
+                                    with a handfull of bugs and is quite fun and hard to play!</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro top" id="top">
+                        <img src="img/portpics/lrucache.png">
+                        <a class="link" href="/lruSim">
+                            <div class="griddyhover tall">
+                                <h1>LRU Cache Simulator</h1>
+                                <p>A JavaScript simulation of hardware cache with k-way associativity and LRU
+                                    replacement strategy.<br> <br> This project is still ongoing.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/mipstext.png">
+                        <a class="" href="/mips">
+                            <div class="griddyhover">
+                                <h1>Assembly Language</h1>
+                                <p>Made some simple programs using MIPS Assembly Language to store and manipulate data
+                                    within the registries of a CPU. </p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro mid" id="mid">
+                        <img src="img/portpics/deeptalks.png">
+                        <a class="" href="/deeptalks">
+                            <div class="griddyhover">
+                                <h1>DeepTalks</h1>
+                                <p>I have started to create a forum where people can discuss a range of topics freely
+                                    and somewhat anonymously, with the advantage of using a beautiful UI.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro" id="full">
+                        <img src="img/portpics/arduinotext-resize.png">
+                        <a class="link" href="/arduino">
+                            <div class="griddyhover">
+                                <h1>Arduino Projects</h1>
+                                <p>I bought an Arduino which I programmed and designed a number of different gadgets
+                                    that generated input/output data.</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro" id="full">
+                        <img src="img/portpics/VB_port_img.png">
+                        <a class="link" href="/visualbasic">
+                            <div class="griddyhover">
+                                <h1>Visual Basic Programs</h1>
+                                <p>I created a few programs using VBA.NET.<br>All of this is on Github!</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li class="gridpro" id="full">
+                        <img src="img/portpics/java2.png">
+                        <a class="link" href="/java">
+                            <div class="griddyhover">
+                                <h1>Java Programs</h1>
+                                <p>I created a number of small Java programs, that could be used for a number of
+                                    different daily tasks.</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <button class="back-to-top" type="button"></button>
+    <!-----Foooter---->
+    <footer class="totality">
+
+        <div class="footermargin">
+            <div class="footercontent">
+                <a href="https://stackoverflow.com/users/8645413/tsot-gvad">stack overflow</a>
+                <a href="https://github.com/RockiRider">github</a>
+                <a href="https://www.linkedin.com/in/tsotne-gvadzabia/">linkedin</a>
+            </div>
+        </div>
+    </footer>
+
+
+    <!---------Script-things----->
+    <script src="js/masonry.pkgd.min.js"></script>
+    <script src="js/typed.js"></script>
+    <script src="js/typer.js" type="text/javascript"></script>
+    <script>
+        $('#button, #buttons').on('click', function () {
+            $(".opac-navigator").fadeToggle("slow", "linear");
+            // Animation complete.
+        });
+
+        // ===== Scroll to Top ====
+        var amountScrolled = 200;
+        var amountScrolledNav = 25;
+
+        $(window).scroll(function () {
+            if ($(window).scrollTop() > amountScrolled) {
+                $('button.back-to-top').addClass('show');
+            } else {
+                $('button.back-to-top').removeClass('show');
+            }
+        });
+
+        $('button.back-to-top').click(function () {
+            $('html, body').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    </script>
+    <script src="https://kit.fontawesome.com/ad90603569.js" crossorigin="anonymous"></script>
+</body>
+
+</html>

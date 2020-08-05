@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en" class="full-height">
+    <head>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <!--- CSS Style Sheet -->
+        <link rel="stylesheet" href="/projects/redbrick/css/style.css">			
+        <link rel="icon" href="/projects/redbrick/img/icons/pizzaicon2.png">
+
+        <title>Red Brick Oven</title>
+
+        <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+
+        <script type="text/javascript">
+            $(window).on('load', function () {
+                $(".loader").delay(1000).animate({ opacity: 0 }, 400);
+                
+                $(".hideMe").delay(1500).animate({ opacity: 1 }, 700);
+            });
+        </script>
+
+
+
+
+    </head>
+    <body>
+
+        <!-----Pre-Load----->
+        <div class ="loader">
+            <div class='pizza'>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+                <div class='slice'></div>
+            </div>
+        </div>
+        <!----Landing Page ----->
+        <div class="hideMe">
+            <section class="landing">    
+                <div id="intro" class="view hm-black-strong">  
+                    <div class="container-fluid full-bg-img overlay d-flex align-items-center justify-content-center">
+                        <div class="row d-flex justify-content-center">
+                            <div class="col-md-12 text-center control-centre ">
+                                <p class="intro-p">WELCOME TO</p>
+                                <h1 class="intro-h1">RED BRICK OVEN</h1>
+                                <!--- We can change the button later --->
+                                <a class="btn-style" href="#firstp"><button type="button" class="btn btn-outline-secondary top-but ">More Information</button></a>
+                                <div id="button" class="scroll">
+                                    <a href="#firstp"><span></span></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>     
+            <!--- Nav Bar --->
+            <section class="firstp" id="firstp">    
+                <nav class="navbar navbar-expand-lg navbar-light bg-light nav-colour">
+                    <a class="navbar-brand" href="#">Red Brick Oven</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                        <div class="navbar-nav mx-auto">
+                            <a class="nav-item nav-link active" href="#intro">Home <span class="sr-only">(current)</span></a>
+                            <a class="nav-item nav-link navi" href="#about">About</a>
+                            <a class="nav-item nav-link navi" href="#menu">Menu</a>
+                            <a class="nav-item nav-link navi" href="#">Contact</a>
+                            <a class="nav-item nav-link navi" href="#">Reviews</a>
+                        </div>
+                    </div>
+                </nav>
+                <!--- First Jumbo --->
+                <div class="jumbotron-fluid jumbo-editor1">
+                    <div class="container special-o">
+                        <h1 class="display-4 ">Special Offer</h1>
+                        <p class="lead">Free Bottle of Italian Red, White House Wine or bottle of soft drink with orders over £30!</p>
+                    </div>
+                </div>
+                <div class="container cont-editor" id="about" >
+                    <div class="row">
+                        <div class="col-md-4 text">
+                            <h3>About Red Brick</h3>
+                            <h5>Oven Baked Italian Pizza</h5>
+                            <br>
+                            <p>We are pleased to be one of the best pizza takeaways in Wimbledon with incredible food, polite and friendly staff, and great value for money.</p>
+                            <br>
+                            <p>We highly recommend our pizza takeaway and know you will enjoy every taste.When you order your pizza from us, you’ll see for yourself why we have been named as one of the best places to order pizza online in Wimbledon.</p>
+                            <a class="btn-style" href="#"><button type="button" class="btn btn-outline-secondary ">Our Reviews</button></a>
+                        </div>
+                        <div class="col-md-4 text">
+                            <img src="/projects/redbrick/img/pizzatile.png" alt="Pizza">
+                        </div>
+                        <div class="col-md-4 edition text">
+                            <div class="image">
+                                <div class="borders">
+                                    <div class="border-text">
+                                        <h3>Our Location</h3>
+                                        <h5>432 Durnsford Rd, London SW19 8DZ, UK</h5>
+                                        <p> Stop by and eat in our warm and comfortable restaurant, or collect your take away and recieve a 15% discount.</p>
+                                        <a class="btn-style" href="#opennow"><button type="button" class="btn btn-outline-secondary opacity-fix ">Find Us On Google Maps</button></a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="menu-section" id="menu">
+                <div class="container-fluid menu">
+                    <div class="menu-text">
+                        <h2>OUR MENU</h2>
+                        <h4>SEE WHAT WE HAVE ON OFFER</h4>
+                        <div class="row menu-start d-flex justify-content-center">
+                            <div class="col menu-sec">
+                                <h5>TO START</h5>
+                                <p>Lorem Ipsum Dolor Sit Amet</p>
+                                <a class="btn-style" href="#"><button type="button" class="btn btn-outline-secondary ">SEE OUR STARTERS</button></a>
+                            </div>
+                            <div class="col menu-img">
+                                <img src="/projects/redbrick/img/starter-menu.png"  alt="Garlic Bread">
+                            </div>
+                            <div class="col menu-sec">
+                                <h5>MAIN COURSES</h5>
+                                <p>Lorem Ipsum Dolor Sit Amet</p>
+                                <a class="btn-style" href="#"><button type="button" class="btn btn-outline-secondary ">SEE OUR MAINS</button></a>
+                            </div>
+                            <div class="w-100"></div>
+                            <div class="col menu-img">
+                                <img src="/projects/redbrick/img/lasagne-menu.png"  alt="Lasagne">
+                            </div>
+                            <div class="col menu-sec">
+                                <h5>Desserts</h5>
+                                <p>Lorem Ipsum Dolor Sit Amet</p>
+                                <a class="btn-style" href="#"><button type="button" class="btn btn-outline-secondary ">SEE OUR DESERTS</button></a>
+                            </div>
+                            <div class="col menu-img">
+                                <img src="/projects/redbrick/img/pizza-menu.png"  alt="Pizza">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section>
+                <div class="jumbotron jumbotron-fluid jumbo-editor2">
+                    <div class="container opening-times" id="opennow">
+                        <h3 class="display-8">OPENING TIMES</h3>
+                        <h5>GET IN TOUCH FOR ANY FURTHER ENQUIRIES</h5>
+                        <p>Monday to Thursday- 14:00 to 23:00</p>
+                        <p>Friday to Satarday- 12:00 to 23:00</p>
+                        <p>Sunday- 14:00 to 23:00</p>
+                        <p class="warningson"> Please note, delivery times may vary</p>
+                    </div>
+                </div>
+                <div class="map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2486.9880238098635!2d-0.19935448405884879!3d51.4400138234488!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x48760f5068198ecf%3A0xb20cf7bbeb1e5a89!2sRed+Brick+Oven!5e0!3m2!1sen!2suk!4v1527352903448" width="100%" height="450" frameborder="0" style="border:0" allowfullscreen></iframe>
+                </div>
+            </section>
+            <footer class="container-fluid">
+                <div class="d-flex justify-content-around">
+                    <div class="first">
+                        <h4 class="wtf">Opening Hours</h4>
+                        <p>Monday to Thursday- 14:00 to 23:00</p>
+                        <p>Friday to Satarday- 12:00 to 23:00</p>
+                        <p>Sunday- 14:00 to 23:00</p>
+                    </div>
+                    <div class="second">
+                        <h4 class="wtf">Useful Links</h4>
+                        <a href=""><p>Home</p></a>
+                        <a href=""><p>About Us</p></a>
+                        <a href=""><p>Order Online</p></a>
+                        <a href=""><p>Contact Us</p></a>
+                        <a href=""><p>Reviews</p></a>
+                    </div>
+                    <div class="third">
+                        <h4 class="wtf">Contact Us</h4>
+                        <p>432 Durnsford Rd</p>
+                        <p>London SW19 8DZ</p>
+                        <p><a href="">contact@redbrickoven.co.uk</a></p>
+                        <p><a href="tel:+020 8944 9500">020 8944 9500</a></p>
+                    </div>
+                </div>
+                <div class="cp d-flex justify-content-center">
+                    <h5>Copyright 2018 © <a href="https://www.tsotnegvadzabia.co.uk">Tsotne Gvadzabia</a></h5>
+                </div>
+
+            </footer>
+        </div>
+
+
+
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+        <script>
+            $(document).ready(function(){
+                // Add smooth scrolling to all links
+                $("a").on('click', function(event) {
+
+                    // Make sure this.hash has a value before overriding default behavior
+                    if (this.hash !== "") {
+                        // Prevent default anchor click behavior
+                        event.preventDefault();
+
+                        // Store hash
+                        var hash = this.hash;
+
+                        // Using jQuery's animate() method to add smooth page scroll
+                        // The optional number (800) specifies the number of milliseconds it takes to scroll to the specified area
+                        $('html, body').animate({
+                            scrollTop: $(hash).offset().top
+                        }, 800, function(){
+
+                            // Add hash (#) to URL when done scrolling (default click behavior)
+                            window.location.hash = hash;
+                        });
+                    } // End if
+                });
+            });
+        </script>
+    </body>
+</html>

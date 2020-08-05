@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tsotne Gvadzabia - Arduino Projects</title>
+    <meta name="description" content="Tsotne Gvadzabia's Arduino Project Designs. I created numerous designs ranging from temperature and light sensors to traffic light systems. All the code and diagrams are avaliable for free!">
+    <meta name="Keywords" content="Tsotne Gvadzabia, Arduino Designs, Arduino Temperature Sensor, Arduino Light Sensor, Arduino LCD Display , Arduino Code and Design , Cool Arduino Projects">
+    <link rel="shortcut icon" href="/img/icons/myicon.jpg">
+      
+    <link rel="stylesheet" type="text/css" href="/css/extension/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/extension/arduinostyle.css"/>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/jarallax-0.2.2.js"></script>
+    <script type="text/javascript">
+      var jarallax
+      init = function() {
+        jarallax = new Jarallax(new ControllerScroll(true));
+        var currentProgress = 0;
+        var progressSteps = 1 / 5;
+        
+        jarallax.setDefault('.container',{opacity:0, display:'none'})
+        
+        jarallax.addAnimation('.logo',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+                                       {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+                                       {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+                                       
+        var animation = jarallax.addAnimation('#slide1',[{progress:'0', display:'block', opacity:'0', top:'100%'},
+                                                         {progress:'10', display:'block', opacity:'1', top:'20%'},
+                                                         {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+                                                         
+        jarallax.cloneAnimation('#slide2',{progress:'+10'}, animation);
+        jarallax.cloneAnimation('#slide3',{progress:'+20'}, animation);
+        jarallax.cloneAnimation('#slide4',{progress:'+30'}, animation);
+        jarallax.cloneAnimation('#slide5',{progress:'+40'}, animation);
+      }
+    </script>
+      
+  </head>
+  <body onLoad='init()'>
+    <div class="preloader" id="preloader">
+        <div class="image">
+        </div>  
+    </div>
+      
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+         <i class="fa fa-times-circle-o"></i>
+        </div>
+    
+        <ul class="menu-halfscreen">
+          <li><a href="/">My Projects</a></li>
+          <li><a href="/blog">My Blog</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </div> 
+<div class="totality"> <!---------DIV Over Everything----->
+        <header class="trox" id="hell">
+
+            <div class="headmargline">
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+            </div>
+        </header>
+    <nav>
+      <ul>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 10, 2000, 30);">Arduino</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 20, 2000, 30);">Recent</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 30, 2000, 30);">All Designs </a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 40, 2000, 30);">Future Developments</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 50, 2000, 30);">Gallery</a></li>
+      </ul>
+    </nav>
+    <h1 class="logo"></h1>
+    <div class="container" id="slide1">
+      <h2>Arduino</h2>
+      <p>
+        <p>Arduino boards have the ability to read a variety of inputs and then create an output. Both of these tasks are taken on through the set of instructions the developer sends to the microcontroller on the board.</p>
+          
+        <p>The instructions are delivered in the form of the Arduino programming language, using the Arduino IDE.</p>
+        <p> You can use light sensors, touch sensors, infrared sensors and even motion sensors as inputs and you can choose how to output this information.</p>
+        <ul>
+            
+        </ul>
+     </p>
+    </div>
+    <div class="container" id="slide2">
+     <h2>Most Recent Project</h2>
+        <p>The diagram, code and general description of the project can be found below. </p>
+        <a href="https://drive.google.com/open?id=0B-Gsp7eKNp8ZRjdwX0Rzbl8wd2c">Click Here</a>
+    </div>
+    <div class="container" id="slide3">
+       <h2>All Designs</h2>
+      <p>
+          Each of my arduino designs complete specific everyday tasks.</p>
+        <p>These tasks range from things like sensing the temperature and displaying it on an LCD, completing a traffic light simulation, sensing light levels and displaying it on an LCD.
+      </p>
+        <p>You can find all my past projects below:</p>
+        <a href="https://circuits.io/users/239866/designs">All Previous Designs</a>
+    </div>
+    <div class="container" id="slide4">
+    <h2>Further Developments To Come</h2>
+      <p>
+       I want to create a remote control operated lock for a door. The arduino will be attached to the door and lock, awaiting the signal of the remote to open and close it. 
+      </p>
+      <p>Another cool project I have in mind is to create a home security system using RFID readers along with motion sensors that set off after sensing motion after a specific time in the day.</p>
+    </div>
+    <div class="container" id="slide5">
+        <h2>Gallery</h2>
+        
+        <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/projects/arduino/img/trafficlights.png" style="width:100%" >
+    <div class="text">Traffic Light Diagram</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/projects/arduino/img/wholemodel.jpg" style="width:100%">
+    <div class="text">Caption Two</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/projects/arduino/img/lcdscreen.jpg" style="width:80%">
+    <div class="text">Caption Three</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+
+</div>
+        
+    </div>
+</div>
+    <script type="text/javascript">
+      try{ 
+      var pageTracker = _gat._getTracker("UA-26904605-1");
+      pageTracker._trackPageview();
+      } catch(err) {} 
+        
+   
+    $('#button, #buttons').on('click', function() {
+      $( ".opac-navigator" ).fadeToggle( "slow", "linear" );
+    // Animation complete.
+    });
+    </script>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  </body>
+</html>

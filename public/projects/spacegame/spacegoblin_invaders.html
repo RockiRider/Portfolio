@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Tsotne Gvadzabia - Space Goblin Invaders</title>
+    <meta name="description" content="Download my Free 2D Platformer Game! You play as the last survivor of earth in an old school ">
+    <meta name="Keywords" content="Tsotne Gvadzabia, Free Game , 2D Platformer, Game Maker Games, Space Goblin Invaders, GML Games, Indie Games, Game Development, Game Maker Developer">
+    <link rel="shortcut icon" href="/img/icons/myicon.jpg">
+      
+    <link rel="stylesheet" type="text/css" href="/css/extension/common.css"/>
+    <link rel="stylesheet" type="text/css" href="/css/extension/gamestyle.css"/>
+    <link rel="stylesheet" href="/font-awesome-4.7.0/css/font-awesome.css">
+    <script src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script type="text/javascript" src="/js/jarallax-0.2.2.js"></script>
+    <script type="text/javascript">
+      var jarallax
+      init = function() {
+        jarallax = new Jarallax(new ControllerScroll(true));
+        var currentProgress = 0;
+        var progressSteps = 1 / 5;
+        
+        jarallax.setDefault('.container',{opacity:0, display:'none'})
+        
+        jarallax.addAnimation('.logo',[{progress:'0', opacity:'1', backgroundPositionY:'50%'},
+                                       {progress:'10', opacity:'0', backgroundPositionY:'0%'},
+                                       {progress:'100%', opacity:'0', backgroundPositionY:'0%'}]);
+                                       
+        var animation = jarallax.addAnimation('#slide1',[{progress:'0', display:'block', opacity:'0', top:'100%'},
+                                                         {progress:'10', display:'block', opacity:'1', top:'20%'},
+                                                         {progress:'20', display:'block', opacity:'0', top:'0%'}]);
+                                                         
+        jarallax.cloneAnimation('#slide2',{progress:'+10'}, animation);
+        jarallax.cloneAnimation('#slide3',{progress:'+20'}, animation);
+        jarallax.cloneAnimation('#slide4',{progress:'+30'}, animation);
+        jarallax.cloneAnimation('#slide5',{progress:'+40'}, animation);
+      }
+    </script>
+      
+  </head>
+  <body onLoad='init()'>
+    <div class="preloader" id="preloader">
+        <div class="image">
+        </div>  
+    </div>
+      
+    <div class="opac-navigator">
+        <div class="menubut" id="buttons" style="z-index:999999">
+         <i class="fa fa-times-circle-o"></i>
+        </div>
+    
+        <ul class="menu-halfscreen">
+          <li><a href="/">My Projects</a></li>
+          <li><a href="/blog">My Blog</a></li>
+          <li><a href="/contact">Contact Me</a></li>
+      </ul>
+    </div> 
+<div class="totality"> <!---------DIV Over Everything----->
+        <header class="trox" id="hell">
+
+            <div class="headmargline">
+                <div class="logoname"><a class="ajax-link" href="/">Tsotne Gvadzabia</a></div>
+                <div id="button" class="menu-bars"><i class="fa fa-bars"></i></div>
+            </div>
+        </header>
+    <nav>
+      <ul>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 10, 2000, 30);">Game Description</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 20, 2000, 30);">Download</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 30, 2000, 30);">The Making Process </a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 40, 2000, 30);">Future Developments</a></li>
+        <li><a href="#" onClick="jarallax.jumpToProgress( 50, 2000, 30);">Gallery</a></li>
+      </ul>
+    </nav>
+    <h1 class="logo"></h1>
+    <div class="container" id="slide1">
+      <h2>Space Goblin Attack</h2>
+      <p>
+        <b>A fast-paced 2D action game that starts you off playing a humble human surviver in time when Goblins are attacking Earth.</b>
+          
+        <b>You take your hero on a journey from deffending Earth to fighting the Goblins in their homeland.</b>
+          
+        <ul>
+            
+        </ul>
+     </p>
+    </div>
+    <div class="container" id="slide2">
+     <h2>Download Instructions</h2>
+        <p>When running the game, Windows will ask if you are sure you want to run it,because unknown ".exe" files are seen as a threat by Windows</p>
+        <p> Please click accept and run the game anyway in order to play the game.</p>
+        
+        <p> A Proper Installation package will be coming soon, in order for this Windows notification not to pop up for players.</p>
+    <a href="https://www.mediafire.com/folder/7wdbe06axa06b/Space_Goblin_Attack_Download_Link">Download Here</a>
+    </div>
+    <div class="container" id="slide3">
+       <h2>How it was made</h2>
+      <p>
+        I created a 2D arcade style adventure game using GML. The first level takes the style of classic 2D platform game, where as in the second level is has very similar mechanics to the classic Space Invaders arcade game.
+      </p>
+    </div>
+    <div class="container" id="slide4">
+    <h2>Further Developments To Come</h2>
+      <p>
+        Firstly there are a 2-3 bugs that need fixing (mostly in the first level). 
+      </p>
+      <p>
+         After that is completed, I will be looking to create a 2 player split screen Co-op            mode, so a friend can help you save the world!
+      </p>
+     
+    </div>
+    <div class="container" id="slide5">
+        <h2>Gallery</h2>
+        
+        <div class="slideshow-container">
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 3</div>
+    <img src="/projects/spacegame/img/needscrop/lvl1game.jpg" style="width:100%">
+    <div class="text">The First Level takes place on earth.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 3</div>
+    <img src="/projects/spacegame/img/slideshow/lvl2.png" style="width:100%">
+    <div class="text">In the Second Level you take the fight to them.</div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 3</div>
+    <img src="/projects/spacegame/img/slideshow/failure2.png" style="width:100%">
+    <div class="text">What happens if you lose!</div>
+  </div>
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span> 
+  <span class="dot" onclick="currentSlide(2)"></span> 
+  <span class="dot" onclick="currentSlide(3)"></span> 
+
+</div>
+        
+    </div>
+</div>
+    <script type="text/javascript">
+      try{ 
+      var pageTracker = _gat._getTracker("UA-26904605-1");
+      pageTracker._trackPageview();
+      } catch(err) {} 
+        
+   
+    $('#button, #buttons').on('click', function() {
+      $( ".opac-navigator" ).fadeToggle( "slow", "linear" );
+    // Animation complete.
+    });
+    </script>
+    <script>
+var slideIndex = 0;
+showSlides();
+
+function showSlides() {
+    var i;
+    var slides = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("dot");
+    for (i = 0; i < slides.length; i++) {
+       slides[i].style.display = "none";  
+    }
+    slideIndex++;
+    if (slideIndex > slides.length) {slideIndex = 1}    
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+    }
+    slides[slideIndex-1].style.display = "block";  
+    dots[slideIndex-1].className += " active";
+    setTimeout(showSlides, 2000); // Change image every 2 seconds
+}
+</script>
+
+  </body>
+</html>
